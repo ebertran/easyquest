@@ -1,0 +1,107 @@
+[
+{
+	"id": 1,
+	"user": 2,
+    "title": "Respeto hacia los animales",
+    "questions": [
+    {
+        "text": "Tienes mascotas?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "animal lover",
+            "value": 0.8
+        },
+        {
+            "text": "No",
+            "dimension": "animal lover",
+            "value": 0.5
+        }]
+    },
+    {
+        "text": "Comes carne habitualmente?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "animal eater",
+            "value": 0.9
+        },
+        {
+            "text": "No",
+            "dimension": "animal eater",
+            "value": 0.1
+        }]
+    },
+    {
+        "text": "Si te encontraras con un animal abandonado, qué harias?",
+        "answers": [
+        {
+            "text": "Lo acogería",
+            "dimension": "animal carer",
+            "value": 0.9
+        },
+        {
+            "text": "Lo llevaría a una casa de acogida",
+            "dimension": "animal carer",
+            "value": 0.7
+        },
+        {
+            "text": "Lo dejaría donde está",
+            "dimension": "animal carer",
+            "value": 0.1
+        }]
+    }]
+},
+{
+	"id": 2,
+	"user": 1,
+    "title": "Perfil de pareja",
+    "questions": [
+    {
+        "text": "Tienes novi@?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "partner lover",
+            "value": 0.8
+        },
+        {
+            "text": "No",
+            "dimension": "partner lover",
+            "value": 0.5
+        }]
+    },
+    {
+        "text": "Te gusta congeniar con personas de tu sexo opuesto?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "hetero potential",
+            "value": 0.9
+        },
+        {
+            "text": "No",
+            "dimension": "hetero potential",
+            "value": 0.1
+        }]
+    },
+    {
+        "text": "Si una persona de tu sexo opuesto quiere salir contigo, qué harías?",
+        "answers": [
+        {
+            "text": "Saldría con ella",
+            "dimension": "partner seeker",
+            "value": 0.9
+        },
+        {
+            "text": "Me lo pensaría",
+            "dimension": "parner seeker",
+            "value": 0.5
+        },
+        {
+            "text": "Lo evitaría",
+            "dimension": "partner seeker",
+            "value": 0.1
+        }]
+    }]
+}]

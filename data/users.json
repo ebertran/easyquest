@@ -1,0 +1,41 @@
+[
+{
+    "id": 1,
+    "name": "Pepito",
+    "surname": "Garcia",
+    "username": "pepito",
+    "password": "123",
+    "quests": [
+    {
+        "id": 1,
+        "answers": [1, 1, 0]
+    },
+    {
+        "id": 2,
+        "answers": [0, 0, 2]
+    }]
+},
+{
+    "id": 2,
+    "name": "Fulanito",
+    "surname": "Garcia",
+    "username": "fulanito",
+    "password": "123",
+    "quests": [
+    {
+        "id": 1,
+        "answers": [0, 0, 2]
+    }]
+},
+{
+    "id": 3,
+    "name": "Menganito",
+    "surname": "Garcia",
+    "username": "menganito",
+    "password": "123",
+    "quests": [
+    {
+        "id": 1,
+        "answers": [1, 1, 1]
+    }]
+}]
