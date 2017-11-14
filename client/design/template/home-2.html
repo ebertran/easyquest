@@ -1,0 +1,272 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+
+    <!-- BOOTSWATCH STYLE -->
+    <link rel="stylesheet" href="../styles/bootswatch.css">
+    <!-- CUSTOM STYLE -->
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <style type="text/css">
+        .Home .jumbotron {
+            background-image: url(../images/retro-grid.jpg);
+        }
+
+        .jumbotron-text {
+            background-color: rgba(43, 68, 80, 0.8);
+        }
+
+        .callToAction a.btn-lg {
+            font-size: 2em;
+        }
+
+        @media (min-width: 768px) {
+            .callToAction {
+                text-align: center;
+                margin-top: 2em;
+            }
+        }
+
+        .question-block legend,
+        .question-block button {
+            margin-bottom: 25px;
+        }
+
+        #thumbnails-info {
+            margin-top: 5em;
+        }
+
+        #thumbnails-info img {
+            display: inline-block;
+            max-width: 200px;
+        }
+
+        .question-block {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .question-block legend,
+        .question-block button {
+            margin-bottom: 25px;
+        }
+
+        .question-block button {
+            white-space: normal !important;
+            word-wrap: break-word;
+        }
+
+        #thumbnails-info a {
+            display: inline-block;
+            max-width: 200px;
+        }
+   
+        .recomendations_popInfo {
+            cursor: pointer;
+        }
+
+        .recomendations_popInfo h3 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+  
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+
+        .results {
+            margin-top: 4em;
+        }
+
+        .results h3 {
+            margin-bottom: 1em;
+        }
+
+        .results .user-info img {
+            display: inline-block;
+        }
+  
+        /* FONT SIZES */
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-size: 1rem;
+        }
+
+        .navbar,
+        label,
+        .radio label {
+            font-size: 1rem;
+        }
+
+        .lead {
+            font-size: 2em;
+        }
+
+        /* GENERALS */
+
+        .App nav {
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+
+        footer .panel {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root">
+        <div class="App">
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="/" class="navbar-brand  active">Quizaurus</a>
+                        <button type="button" class="navbar-toggle collapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li role="presentation" class="active">
+                                <a href="/">Home</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="/profile">Profile</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="/test">Test Creator</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="/about">About</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="/contact">Contact</a>
+                            </li>
+                        </ul>
+                            <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search test">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+                    </div>
+                </div>
+            </nav>
+            <div class="Main">
+                <div class="Home">
+                    <div class="jumbotron">
+                        <div class="container">
+                            <div class="row">
+                                <div class="jumbotron-text col-md-8">
+                                    <h1>Want to do your own quizs?</h1>
+                                    <p>Find the best tool for it, and send it to everyone you want!</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="callToAction">
+                                        <a href="/test" class="btn btn-lg btn-primary">Make your tests!</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="thumbnails-info" class="container">
+                        <div class="row">
+                            <div class="text-center col-sm-4">
+                                <img src="../images//command.png" class="img-responsive">
+                                <h3>Test it!</h3>
+                            </div>
+                            <div class="text-center col-sm-4">
+                                <img src="../images//statistics.png" class="img-responsive">
+                                <h3>Discover your gamer personality</h3>
+                            </div>
+                            <div class="text-center col-sm-4">
+                                <img src="../images/command-old.png" class="img-responsive">
+                                <h3>See your personal recomendation</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="panel panel-default">
+                    <div class="panel-body">Skylab Coders Bootcamp project, implemented by
+                        <strong>
+                            <a href="https://github.com/ebertran">Enric Bertran</a>,
+                            <a href="https://github.com/eidegarayo">Eva Ibañez de Garayo</a>,
+                            <a href="https://github.com/waken22">Jesé Ramon</a>
+                        </strong>
+                    </div>
+                    <div class="panel-footer">Game Affinity</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script type="text/javascript" src="/static/js/bundle.js"></script>
+
+</body>
+
+</html>
