@@ -6,6 +6,13 @@ a{
     text-decoration: none;
 } 
 
+li{
+    list-style-type: none;
+}
+
+p {
+    display: inline;
+}
 footer{
     background-color: #424558;
     position: fixed;
@@ -35,4 +42,21 @@ footer p {
 
 .separator {
     height: 200px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+}
+
+.button-test-creator{
+    margin-top: 40%;
+}
+
+.profile{
+    text-align: center;
+}
+
+.tests-index {
+    padding: 15px 0px;
 }
