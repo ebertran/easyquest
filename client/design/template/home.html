@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Home</title>
     <!-- Bootstrap -->
- <!-- BOOTSWATCH STYLE -->
- <link rel="stylesheet" href="../styles/bootswatch.css">
- <!-- CUSTOM STYLE -->
- <link rel="stylesheet" href="../styles/style.css">
+    <!-- BOOTSWATCH STYLE -->
+    <link rel="stylesheet" href="../styles/bootswatch.css">
+    <!-- CUSTOM STYLE -->
+    <link rel="stylesheet" href="../styles/main.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -22,71 +22,90 @@
 
 <body>
     <nav class="navbar navbar-default">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Test Creator</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Quezaurus</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Profile</a>
+            </li>
+            <li>
+                <a href="#">Test Creator</a>
+            </li>
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+        <form class="navbar-form navbar-right">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search test">
+                <input type="text" class="form-control" placeholder="Search test">
             </div>
             <button type="submit" class="btn btn-default">Search</button>
-          </form>
+        </form>
     </nav>
-    <section class="text-center container">
-            
+    <div class="container">
+        <section class="text-center panel panel-default">
+            <div class="panel-heading">
                 <header class="row">
                     <div class="col-sm-offset-1 col-sm-5">
                         <img class="logo" src="../images/stego-logo.jpg" alt="#" />
                     </div>
                     <div class="col-sm-5">
                         <div class="row">
-                            <div class="col-xs-12 btn btn-space"><button type="button" class="btn btn-primary">Login</button></div>
-                            <div class="col-xs-12 btn btn-space"><button type="button" class="btn btn-primary">Register</button></div>
-                        </div>                
+                            <div class="col-xs-12 btn btn-space">
+                                <button type="button" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="col-xs-12 btn btn-space">
+                                <button type="button" class="btn btn-primary">Register</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-12 separator"></div>
-                </header>   
+                </header>
 
-                
-               
+
+
                 <content class="row">
-                    <div class="col-sm-4"><img class="mini-logo" src="../images/exempleUser1.jpg" alt="#" />
+                    <div class="col-sm-4">
+                        <img class="mini-logo" src="../images/exempleUser1.jpg" alt="#" />
                         <h3 class="text-primary">Test 1</h3>
                         <p>From: Jun 15, 2016</p>
                     </div>
-                    <div class="col-sm-4"><img class="mini-logo" src="../images/exempleUser2.png" alt="#" />
+                    <div class="col-sm-4">
+                        <img class="mini-logo" src="../images/exempleUser2.png" alt="#" />
                         <h3 class="text-primary">Test 2</h3>
                         <p>From: Jun 15, 2016</p>
                     </div>
-                        <div class="col-sm-4"><img class="mini-logo" src="../images/exempleUser3.png" alt="#" />
+                    <div class="col-sm-4">
+                        <img class="mini-logo" src="../images/exempleUser3.png" alt="#" />
                         <h3 class="text-primary">Test 3</h3>
                         <p>From: Jun 15, 2016</p>
-                        </div>            
+                    </div>
                 </content>
-                
-            
-    </section>
+
+            </div>
+        </section>
+    </div>
 
     <footer>
-        <div>
-            <p align="center">© 2017<a href="#"> Enric Bertran</a>, All rights reserved 2016-2017.</p>
+        <div class="panel panel-default">
+            <div class="panel-footer text-center">Panel Footer</div>
         </div>
     </footer>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <!--
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 -->
-        <script src="../vendor/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="../vendor/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="../scripts/main.js"></script>
+    <script src="../vendor/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../vendor/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
 </body>
 
 </html>
