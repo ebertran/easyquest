@@ -18,6 +18,15 @@ footer.margins {
     height: 20px;
 }
 
+/* body { 
+    background: url(../images/jungle.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    } */
+
+
 .mini-logo {
     width: 50px;
     height: 75px;
