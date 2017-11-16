@@ -11,8 +11,8 @@ app.use(bodyParser.json())
 
 const router = express.Router()
 
-const userData = new(require('./users/UserData'))
-const quizData = new(require('./quizs/QuizData'))
+const userData = new(require('./data/UserData.js'))
+const quizData = new(require('./data/QuizData.js'))
 
 
 
@@ -98,7 +98,7 @@ app.use('/api', router)
 
 console.log(`Connecting Quizs API db on url ${process.env.DB_URL}`)
 
-require('../mongoose')
+require('./mongoose')
 
 console.log(`Starting Quizs API on port ${process.env.PORT}`)
 

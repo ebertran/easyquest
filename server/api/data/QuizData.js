@@ -9,7 +9,7 @@ class QuizData {
 
     list() {
         return Quiz.find()
-            .then(quizs => quizs.map(quiz => this._normalize(quiz)))
+            //.then(quizs => quizs.map(quiz => this._normalize(quiz)))
     }
 
     retrieve(id) {
@@ -25,4 +25,4 @@ class QuizData {
 
 }
 
-module.exports = quizData
+module.exports = QuizData
