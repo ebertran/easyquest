@@ -16,6 +16,6 @@ function assertList(res) {
 	assert.ok(res, 'results should not be empty')
 
 	assert.ok(res.length > 0, 'results should have values')
-}
 
-console.log('hello')
+	console.log('userData.list OK')
+}
