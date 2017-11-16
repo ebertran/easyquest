@@ -12,6 +12,6 @@ const QuizSchema = new Schema({
             value: Number
         }]
     }]
-}, 'quizs')
+}, { collection: 'quizs' })
 
 module.exports = mongoose.model('Quiz', QuizSchema)
