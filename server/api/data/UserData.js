@@ -2,9 +2,9 @@ const User = require('./model/UserModel')
 
 class UserData {
     _normalize(user) {
-        const { _id, name, surname, username, password, quizs } = user
+        const { _id, username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization, quizs } = user
 
-        return { id: _id, name, surname, username, password, quizs }
+        return { id: _id, username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization, quizs }
     }
 
     list() {

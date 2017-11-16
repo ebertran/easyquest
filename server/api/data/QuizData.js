@@ -1,15 +1,18 @@
 const Quiz = require('./model/QuizModel')
+// const User = require('./model/UserModel')
 
 class QuizData {
     _normalize(quiz) {
-        const { _id, title, questions } = quiz
+        const { _id, user, title, author, field, description, version,
+             private, allowedUsers, active, questions } = quiz
 
-        return { id: _id, title, questions }
+        return { id: _id, user, title, author, field, description, version,
+            private, allowedUsers, active, questions }
     }
 
     list() {
         return Quiz.find()
-            //.then(quizs => quizs.map(quiz => this._normalize(quiz)))
+            .then(quizs => quizs.map(quiz => this._normalize(quiz)))
     }
 
     retrieve(id) {
