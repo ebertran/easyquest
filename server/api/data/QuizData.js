@@ -1,4 +1,4 @@
-const Quiz = require('./QuizModel')
+const Quiz = require('./model/QuizModel')
 
 class QuizData {
     _normalize(quiz) {

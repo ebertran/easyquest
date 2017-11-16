@@ -98,9 +98,7 @@ app.use('/api', router)
 
 console.log(`Connecting Quizs API db on url ${process.env.DB_URL}`)
 
-const mongoose = require('mongoose')
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.DB_URL, { useMongoClient: true })
+require('../mongoose')
 
 console.log(`Starting Quizs API on port ${process.env.PORT}`)
 

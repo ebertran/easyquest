@@ -1,4 +1,4 @@
-const User = require('./UserModel')
+const User = require('./model/UserModel')
 
 class UserData {
     _normalize(user) {
