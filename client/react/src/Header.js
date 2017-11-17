@@ -1,25 +1,25 @@
 import React from 'react';
 
 const Header = () => (
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar custom">
         <div className="navbar-header">
-          <a className="navbar-brand" href="#">Quezaurus</a>
+          <a className="navbar-brand title" href="#">Quezaurus</a>
         </div>
         <ul className="nav navbar-nav">
           <li>
-            <a href="#">Home</a>
+            <a className="title" href="#">Home</a>
           </li>
           <li className="active">
-            <a href="#">Profile</a>
+            <a class="title" href="#">Profile</a>
           </li>
           <li>
-            <a href="#">Test Creator</a>
+            <a className="title" href="#">Test Creator</a>
           </li>
           <li>
-            <a href="#">About us</a>
+            <a className="title" href="#">About us</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a className="title" href="#">Contact</a>
           </li>
         </ul>
         <form className="navbar-form navbar-right">

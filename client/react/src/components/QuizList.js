@@ -6,16 +6,16 @@ class QuizList extends Component {
     super();
 
     this.state = {
-      user: "",
       quizs: []
     };
   }
 
   componentDidMount() {
     axios.get('http://localhost:3000/api/quizs')
-            .then(({data:{data:quizs}}) => {
-                quizs = quizs.filter(quiz => quiz.user === "5a04c5ae1d195c4e88dbfcaa")
+            .then(({data:{data:quizser}}) => {
+                const quizs = quizser.filter(quiz => quiz.user === "5a04c5ae1d195c4e88dbfcaa")
 
+                console.log('holaaaa', quizs)
                 this.setState({quizs})
             })
             .catch(function (err) {
@@ -26,9 +26,9 @@ class QuizList extends Component {
   render() {
     return (
       <div className="col-sm-10">
-        <section className="text-center panel panel-default">
-          <div className="text-left panel-heading">
-            <div>
+        <section className="text-center panel">
+          <div className="text-left panel-heading  custom-logo">
+            <div className="">
               <h2>
                 Your tests
                 <a href="#">
@@ -41,26 +41,27 @@ class QuizList extends Component {
           </div>
           <div className="panel-body">
             <div className="row">
-              {'{'}this.state.quizs.map(function(quiz, index) {'{'}
+              {this.state.quizs.map((quiz, index) => {
               return (
-              <div className="col-sm-4 user-tests-box">
-                <h4 key="{index}">{'{'}quiz.title{'}'}</h4>
-                <p key="{index}">{'{'}quiz.description{'}'}</p>
-                <br />
-                <button type="button" className=" btn-space btn-primary">
-                  Results
-                </button>
-                <button type="button" className=" btn-space btn-success">
-                  Edit
-                </button>
-                <button type="button" className=" btn-space btn-danger">
-                  Delete
-                </button>
-              </div>
-              );
-              {'}'}){'}'}
+                <div key={index} className="col-sm-4 user-tests-box">
+                  <h4>{ quiz.title }</h4>
+                  <p>{ quiz.description}</p>
+                  <br />
+                  <button type="button" className=" btn-space btn-primary">
+                    Results
+                  </button>
+                  <button type="button" className=" btn-space btn-success">
+                    Edit
+                  </button>
+                  <button type="button" className=" btn-space btn-danger">
+                    Delete
+                  </button>
+                </div>
+              )}
+              )}
             </div>
-          </div></section>
+          </div>
+          </section>
       </div>
     )
     
