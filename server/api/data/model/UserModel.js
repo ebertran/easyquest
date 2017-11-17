@@ -9,22 +9,7 @@ const UserSchema = new Schema({
   email: String,
   name: String,
   surname: String,
-  birthdate: Date,
-  sex: String,
-  zipcode: String,
-  studies: String,
-  ocupation: [
-    {
-      type: String,
-      name: String
-    }
-  ],
-  organization: [
-    {
-      type: String,
-      name: String
-    }
-  ],
+  
   quizs: [
     {
       id: String,

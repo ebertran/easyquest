@@ -1,17 +1,20 @@
+import React, { Component } from 'react';
+
 class App extends React.Component {
     constructor() {
         super()
 
         this.state = {
-            users: []
+            user: "",
+            quizs: []
         }
     }
 
     componentDidMount() {
         axios.get('https://facebook.github.io/react-native/movies.json')
-            .then(({data: {movies}}) => {
-                console.log(movies)
-                this.setState({movies})
+            .then(({data: {quizs}}) => {
+                console.log(quizs)
+                this.setState({quizs})
             })
             .catch(function (err) {
                 console.error(err)
@@ -19,17 +22,18 @@ class App extends React.Component {
     }
 
     render() {
-        return <div>
-            <h1>hello</h1>
-            <ul>
-                {
-                    this.state.movies.map(function (movie, index) {
-                        return <li key={index}>{movie.title} ({movie.releaseYear})</li>
-                    })
-                }
-            </ul>
-        </div>
-    }
+        return  
+            <div class="col-sm-2 profile">  
+                <img class="avatar" src="../images/user5.png    " alt="#" />
+                <h3 class="text-left">Username</h3>
+                <h5 class="text-left">Ocupation</h5>
+                <h5 class="text-left">Organization</h5>
+                <h5 class="text-left">Ubication</h5>
+                <br />
+                <h5 class="text-left"><strong>X</strong> quizs created</h5>
+                <h5 class="text-left"><strong>Y</strong> quizs answered</h5>
+            </div>
+   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+export default UserProfile

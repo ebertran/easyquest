@@ -1,10 +1,27 @@
 [
 {
     "userId": 1,
+    "username": "Warki",
+    "password": "123",
     "name": "Pepito",
     "surname": "Garcia",
-    "username": "pepito",
-    "password": "123",
+    "birthdate": "1985-07-15T23:32:18Z",
+    "sex": "male",
+    "zipcode": 08960,
+    "studies": "Superior",
+    "ocupation": [
+      {
+        "type": "working",
+        "name": "Developer"
+      }
+    ],
+    "organization": [
+      {
+        "type": "company",
+        "name": "Pulse Clown"
+      }
+    ],
+   
     "quizs": [
     {
         "id": 1,
