@@ -12,15 +12,15 @@ class QuizList extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("https://facebook.github.io/react-native/quizs.json")
-      .then(({ data: { quizs } }) => {
-        console.log(quizs);
-        this.setState({ quizs });
-      })
-      .catch(function(err) {
-        console.error(err);
-      });
+    axios.get('http://localhost:3000/api/quizs')
+            .then(({data:{data:quizs}}) => {
+                quizs = quizs.filter(quiz => quiz.user === "5a04c5ae1d195c4e88dbfcaa")
+
+                this.setState({quizs})
+            })
+            .catch(function (err) {
+                console.error(err)
+            })
   }
 
   render() {
