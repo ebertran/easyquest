@@ -11,10 +11,10 @@ class QuizList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/quizs')
-            .then(({data:{data:quizser}}) => {
-                const quizs = quizser.filter(quiz => quiz.user === "5a04c5ae1d195c4e88dbfcaa")
-
+    //axios.get('http://localhost:3000/api/quizs')
+    axios.get('https://desolate-bastion-53155.herokuapp.com/api/quizs')
+            .then(({data:{data:quizs}}) => {
+                quizs = quizs.filter(quiz => quiz.user === "5a04c5ae1d195c4e88dbfcaa")
                 console.log('holaaaa', quizs)
                 this.setState({quizs})
             })
