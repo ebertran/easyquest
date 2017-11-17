@@ -12,7 +12,7 @@ const QuizSchema = new Schema(
     field: String,
     description: String,
     version: String,
-    private: Boolean,
+    scope: String,
     allowedUsers: [String],
     // allowedUsers: [{ type: Schema.ObjectId, ref: "User" }],
     active: Boolean,

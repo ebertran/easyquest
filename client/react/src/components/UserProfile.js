@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
-class App extends React.Component {
+class UserProfile extends Component {
     constructor() {
         super()
 
@@ -22,17 +23,19 @@ class App extends React.Component {
     }
 
     render() {
-        return  
-            <div class="col-sm-2 profile">  
-                <img class="avatar" src="../images/user5.png    " alt="#" />
-                <h3 class="text-left">Username</h3>
-                <h5 class="text-left">Ocupation</h5>
-                <h5 class="text-left">Organization</h5>
-                <h5 class="text-left">Ubication</h5>
-                <br />
-                <h5 class="text-left"><strong>X</strong> quizs created</h5>
-                <h5 class="text-left"><strong>Y</strong> quizs answered</h5>
-            </div>
+        return  (
+        <div className="col-sm-2 profile">  
+            <img className="avatar" src="../images/user5.png    " alt="#" />
+            <h3 className="text-left">Username</h3>
+            <h5 className="text-left">Ocupation</h5>
+            <h5 className="text-left">Organization</h5>
+            <h5 className="text-left">Ubication</h5>
+            <br />
+            <h5 className="text-left"><strong>X</strong> quizs created</h5>
+            <h5 className="text-left"><strong>Y</strong> quizs answered</h5>
+        </div>
+            )
+            
    }
 }
 

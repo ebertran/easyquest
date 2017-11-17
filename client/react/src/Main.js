@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-
-import questions from "../dataService/questions.json";
+//import { Switch, Route } from "react-router-dom";
 
 import UserProfile from "./components/UserProfile";
 import QuizList from "./components/QuizList";
@@ -18,8 +16,8 @@ class Main extends Component {
   render() {
     return (
       <content>
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
             <UserProfile />
             <QuizList />
           </div>

@@ -1,15 +1,13 @@
 [
 {
-	"id": 1,
-	"user": 2,
+    "_id": "5a04c5ae1d195c4e88dbfca1",
+    "user": "5a04c5ae1d195c4e88dbfcaa",
     "title": "Respeto hacia los animales",
     "author": "Lord Vader",
     "field": "Psychology",
-    "description": "Ipsum is simply dummy text ndustry's standard dummy text ever since the 1500s, when an unknown
-    printer took a galley of type and scrambled it to make a type specimen book. It has survived
-    not only five centuries, but also the",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamcorper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.corper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.",
     "version": "1.0",
-    "private": false,
+    "scope": "public",
     "allowedUsers": [],
     "active": true,
     "questions": [
@@ -62,16 +60,14 @@
     }]
 },
 {
-	"id": 2,
-	"user": 1,
+    "_id": "5a04c5ae1d195c4e88dbfca2",
+    "user": "5a04c5ae1d195c4e88dbfcaa",
     "title": "Perfil de pareja",
     "author": "Jhon Rambo",
     "field": "Psychology",
-    "description": "Ipsum is simply dummy text ndustry's standard dummy text ever since the 1500s, when an unknown
-    printer took a galley of type and scrambled it to make a type specimen book. It has survived
-    not only five centuries, but also the",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamcorper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.corper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.",
     "version": "1.0",
-    "private": false,
+    "scope": "public",
     "allowedUsers": [],
     "active": true,
     "questions": [
@@ -124,188 +120,122 @@
     }]
 },
 {
-"id": 3,
-"user": 2,
-"title": "Respeto hacia los animales",
-"author": "Lord Vader",
-"field": "Psychology",
-"description": "Ipsum is simply dummy text ndustry's standard dummy text ever since the 1500s, when an unknown
-printer took a galley of type and scrambled it to make a type specimen book. It has survived
-not only five centuries, but also the",
-"version": "1.0",
-"private": false,
-"allowedUsers": [],
-"active": true,
-"questions": [
-{
-    "text": "Tienes mascotas?",
-    "answers": [
+    "_id": "5a04c5ae1d195c4e88dbfca3",
+    "user": "5a04c5ae1d195c4e88dbfcaa",
+    "title": "Respeto hacia los animales",
+    "author": "Lord Vader",
+    "field": "Psychology",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamcorper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.corper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.",
+    "version": "1.0",
+    "scope": "public",
+    "allowedUsers": [],
+    "active": true,
+    "questions": [
     {
-        "text": "Si",
-        "dimension": "animal lover",
-        "value": 0.8
+        "text": "Tienes mascotas?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "animal lover",
+            "value": 0.8
+        },
+        {
+            "text": "No",
+            "dimension": "animal lover",
+            "value": 0.5
+        }]
     },
     {
-        "text": "No",
-        "dimension": "animal lover",
-        "value": 0.5
+        "text": "Comes carne habitualmente?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "animal eater",
+            "value": 0.9
+        },
+        {
+            "text": "No",
+            "dimension": "animal eater",
+            "value": 0.1
+        }]
+    },
+    {
+        "text": "Si te encontraras con un animal abandonado, qué harias?",
+        "answers": [
+        {
+            "text": "Lo acogería",
+            "dimension": "animal carer",
+            "value": 0.9
+        },
+        {
+            "text": "Lo llevaría a una casa de acogida",
+            "dimension": "animal carer",
+            "value": 0.7
+        },
+        {
+            "text": "Lo dejaría donde está",
+            "dimension": "animal carer",
+            "value": 0.1
+        }]
     }]
 },
 {
-    "text": "Comes carne habitualmente?",
-    "answers": [
+    "_id": "5a04c5ae1d195c4e88dbfca4",
+    "user": "5a04c5ae1d195c4e88dbfcaa",
+    "title": "Respeto hacia los animales",
+    "author": "Lord Vader",
+    "field": "Psychology",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et. Proin finibus rutrum viverra. In condimentum massa vitae nulla aliquam tincidunt. Ut auctor porta nibh, vitae ullamcorper est tincidunt vel. Vivamus ullamcorper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.corper urna nec lorem consectetur, quis sodales erat rhoncus. Duis bibendum at quam vel porta.",
+    "version": "1.0",
+    "scope": "public",
+    "allowedUsers": [],
+    "active": true,
+    "questions": [
     {
-        "text": "Si",
-        "dimension": "animal eater",
-        "value": 0.9
+        "text": "Tienes mascotas?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "animal lover",
+            "value": 0.8
+        },
+        {
+            "text": "No",
+            "dimension": "animal lover",
+            "value": 0.5
+        }]
     },
     {
-        "text": "No",
-        "dimension": "animal eater",
-        "value": 0.1
+        "text": "Comes carne habitualmente?",
+        "answers": [
+        {
+            "text": "Si",
+            "dimension": "animal eater",
+            "value": 0.9
+        },
+        {
+            "text": "No",
+            "dimension": "animal eater",
+            "value": 0.1
+        }]
+    },
+    {
+        "text": "Si te encontraras con un animal abandonado, qué harias?",
+        "answers": [
+        {
+            "text": "Lo acogería",
+            "dimension": "animal carer",
+            "value": 0.9
+        },
+        {
+            "text": "Lo llevaría a una casa de acogida",
+            "dimension": "animal carer",
+            "value": 0.7
+        },
+        {
+            "text": "Lo dejaría donde está",
+            "dimension": "animal carer",
+            "value": 0.1
+        }]
     }]
-},
-{
-    "text": "Si te encontraras con un animal abandonado, qué harias?",
-    "answers": [
-    {
-        "text": "Lo acogería",
-        "dimension": "animal carer",
-        "value": 0.9
-    },
-    {
-        "text": "Lo llevaría a una casa de acogida",
-        "dimension": "animal carer",
-        "value": 0.7
-    },
-    {
-        "text": "Lo dejaría donde está",
-        "dimension": "animal carer",
-        "value": 0.1
-    }]
-},
-
-{
-"id": 4,
-"user": 2,
-"title": "Respeto hacia los animales",
-"author": "Lord Vader",
-"field": "Psychology",
-"description": "Ipsum is simply dummy text ndustry's standard dummy text ever since the 1500s, when an unknown
-printer took a galley of type and scrambled it to make a type specimen book. It has survived
-not only five centuries, but also the",
-"version": "1.0",
-"private": false,
-"allowedUsers": [],
-"active": true,
-"questions": [
-{
-    "text": "Tienes mascotas?",
-    "answers": [
-    {
-        "text": "Si",
-        "dimension": "animal lover",
-        "value": 0.8
-    },
-    {
-        "text": "No",
-        "dimension": "animal lover",
-        "value": 0.5
-    }]
-},
-{
-    "text": "Comes carne habitualmente?",
-    "answers": [
-    {
-        "text": "Si",
-        "dimension": "animal eater",
-        "value": 0.9
-    },
-    {
-        "text": "No",
-        "dimension": "animal eater",
-        "value": 0.1
-    }]
-},
-{
-    "text": "Si te encontraras con un animal abandonado, qué harias?",
-    "answers": [
-    {
-        "text": "Lo acogería",
-        "dimension": "animal carer",
-        "value": 0.9
-    },
-    {
-        "text": "Lo llevaría a una casa de acogida",
-        "dimension": "animal carer",
-        "value": 0.7
-    },
-    {
-        "text": "Lo dejaría donde está",
-        "dimension": "animal carer",
-        "value": 0.1
-    }]
-},
-{
-"id": 5,
-"user": 2,
-"title": "Respeto hacia los animales",
-"author": "Lord Vader",
-"field": "Psychology",
-"description": "Ipsum is simply dummy text ndustry's standard dummy text ever since the 1500s, when an unknown
-printer took a galley of type and scrambled it to make a type specimen book. It has survived
-not only five centuries, but also the",
-"version": "1.0",
-"private": false,
-"allowedUsers": [],
-"active": true,
-"questions": [
-{
-    "text": "Tienes mascotas?",
-    "answers": [
-    {
-        "text": "Si",
-        "dimension": "animal lover",
-        "value": 0.8
-    },
-    {
-        "text": "No",
-        "dimension": "animal lover",
-        "value": 0.5
-    }]
-},
-{
-    "text": "Comes carne habitualmente?",
-    "answers": [
-    {
-        "text": "Si",
-        "dimension": "animal eater",
-        "value": 0.9
-    },
-    {
-        "text": "No",
-        "dimension": "animal eater",
-        "value": 0.1
-    }]
-},
-{
-    "text": "Si te encontraras con un animal abandonado, qué harias?",
-    "answers": [
-    {
-        "text": "Lo acogería",
-        "dimension": "animal carer",
-        "value": 0.9
-    },
-    {
-        "text": "Lo llevaría a una casa de acogida",
-        "dimension": "animal carer",
-        "value": 0.7
-    },
-    {
-        "text": "Lo dejaría donde está",
-        "dimension": "animal carer",
-        "value": 0.1
-    }]
-},
-
-]
+}]

@@ -3,11 +3,9 @@ const Quiz = require('./model/QuizModel')
 
 class QuizData {
     _normalize(quiz) {
-        const { _id, user, title, author, field, description, version,
-             private, allowedUsers, active, questions } = quiz
+        const { _id, user, title, author, field, description, version, scope, allowedUsers, active, questions } = quiz
 
-        return { id: _id, user, title, author, field, description, version,
-            private, allowedUsers, active, questions }
+        return { id: _id, user, title, author, field, description, version, scope, allowedUsers, active, questions }
     }
 
     list() {
