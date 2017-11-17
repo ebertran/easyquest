@@ -6,16 +6,16 @@ class UserProfile extends Component {
         super()
 
         this.state = {
-            user: "",
-            quizs: []
+            user: {}
         }
     }
 
     componentDidMount() {
-        axios.get('https://facebook.github.io/react-native/movies.json')
-            .then(({data: {quizs}}) => {
-                console.log(quizs)
-                this.setState({quizs})
+        axios.get('http://localhost:3000/api/users')
+            .then(({data:{data:users}}) => {
+                const [user] = users.filter(user => user.id === "5a04c5ae1d195c4e88dbfcaa")
+
+                this.setState({user})
             })
             .catch(function (err) {
                 console.error(err)
@@ -26,13 +26,9 @@ class UserProfile extends Component {
         return  (
         <div className="col-sm-2 profile">  
             <img className="avatar" src="../images/user5.png    " alt="#" />
-            <h3 className="text-left">Username</h3>
-            <h5 className="text-left">Ocupation</h5>
-            <h5 className="text-left">Organization</h5>
-            <h5 className="text-left">Ubication</h5>
-            <br />
-            <h5 className="text-left"><strong>X</strong> quizs created</h5>
-            <h5 className="text-left"><strong>Y</strong> quizs answered</h5>
+            <h3 className="text-left">Username: { this.state.user.username }</h3>
+            <h5 className="text-left">Name: { this.state.user.name }</h5>
+            <h5 className="text-left">Surname: { this.state.user.surname }</h5>
         </div>
             )
             
