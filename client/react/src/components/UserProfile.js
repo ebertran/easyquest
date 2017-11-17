@@ -11,7 +11,8 @@ class UserProfile extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/users')
+        //axios.get('http://localhost:3000/api/users')
+        axios.get('https://desolate-bastion-53155.herokuapp.com/api/users')
             .then(({data:{data:users}}) => {
                 const [user] = users.filter(user => user.id === "5a04c5ae1d195c4e88dbfcaa")
 
