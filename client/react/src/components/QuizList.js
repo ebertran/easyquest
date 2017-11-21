@@ -26,7 +26,7 @@ class QuizList extends Component {
   render() {
     return (
       <div className="col-sm-10">
-        <section className="text-center panel">
+        <section className="text-center panel panel-default">
           <div className="text-left panel-heading  custom-logo">
             <div className="">
               <h2>
@@ -47,13 +47,13 @@ class QuizList extends Component {
                   <h4>{ quiz.title }</h4>
                   <p>{ quiz.description}</p>
                   <br />
-                  <button type="button" className=" btn-space btn-primary">
+                  <button type="button" className="btn btn-space btn-primary">
                     Results
-                  </button>
-                  <button type="button" className=" btn-space btn-success">
+                  </button> 
+                  <button type="button" className="btn btn-space btn-success">
                     Edit
-                  </button>
-                  <button type="button" className=" btn-space btn-danger">
+                  </button>   
+                  <button type="button" className="btn btn-space btn-danger">
                     Delete
                   </button>
                 </div>

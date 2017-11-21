@@ -14,18 +14,6 @@ p {
     display: inline;
 }
 
-.custom {
-    background-color: #505D6A;
-}
-
-.custom-logo {
-    background-color: rgb(59, 69, 78);
-}
-
-.title{
-    color: white;
-}
-
 footer.margins {
     height: 20px;
 }

@@ -39,7 +39,6 @@ footer.margins {
 
 .separator {
     height: 200px;
-    /* background-color: #D26E33; */
 }
 
 .avatar {
@@ -74,8 +73,4 @@ footer.margins {
 
 .innav {
     background-color: #505D6A;
-}
-
-.buttonFull {
-    width: 40%;
 }

@@ -10,6 +10,7 @@ const QuizSchema = new Schema(
     title: String,
     author: String,
     field: String,
+    tags: [String],
     description: String,
     version: String,
     scope: String,
