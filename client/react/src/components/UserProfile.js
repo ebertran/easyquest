@@ -26,7 +26,7 @@ class UserProfile extends Component {
     render() {
         return  (
         <div className="col-sm-2 profile">  
-            <img className="avatar" src="../images/user6.png    " alt="#" />
+            <img className="avatar" src="../images/user4.png" alt="#" />
             <h3 className="text-left">{ this.state.user.username }</h3>
             <h5 className="text-left">Name: { this.state.user.name }</h5>
             <h5 className="text-left">Surname: { this.state.user.surname }</h5>

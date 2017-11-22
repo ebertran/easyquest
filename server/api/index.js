@@ -72,6 +72,24 @@ router.route('/quizs')
                 })
             })
     })
+    .post((req, res) => {
+        const { user, title, author, field, tags, description, version, scope, allowedUsers, active, questions } = req.body
+
+        quizData.create(user, title, author, field, tags, description, version, scope, allowedUsers, active, questions)
+            .then(quiz => {
+                res.json({
+                    status: 'OK',
+                    message: 'quiz created successfully',
+                    data: quiz
+                })
+            })
+            .catch(err => {
+                res.json({
+                    status: 'KO',
+                    message: err.message
+                })
+            })
+    })
 
 router.route('/quiz/:id')
     .get((req, res) => {

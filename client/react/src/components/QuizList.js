@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios'
 
+import UserProfile from "./UserProfile";
+
 class QuizList extends Component {
   constructor() {
     super();
@@ -24,7 +26,8 @@ class QuizList extends Component {
   }
 
   render() {
-    return (
+    return (<div>
+      <UserProfile />
       <div className="col-sm-10">
         <section className="text-center panel panel-default">
           <div className="text-left panel-heading  custom-logo">
@@ -63,7 +66,7 @@ class QuizList extends Component {
           </div>
           </section>
       </div>
-    )
+    </div>)
     
   }
 }

@@ -28,8 +28,8 @@ footer.margins {
 
 
 .mini-logo {
-    width: 50px;
-    height: 75px;
+    width: 200px;
+    height: 200px;
 }
 
 .logo {
@@ -39,6 +39,8 @@ footer.margins {
 
 .separator {
     height: 200px;
+    background-color: #505D6A;
+    margin-bottom: 25px;
     /* background-color: #D26E33; */
 }
 
