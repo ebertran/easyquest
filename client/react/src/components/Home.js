@@ -66,7 +66,8 @@ class Home extends Component {
             </div>
           </div>
           <div className="col-sm-12 separator login">
-            <h1>When quizs ruled the Earth</h1>
+            <h1 className="text-center super-title"><span className="super-title">Quezaurus</span></h1>
+            <h1 className="text-center">When quizs ruled the Earth</h1>
           </div>
         </header>
         <section className="text-center">
@@ -84,10 +85,12 @@ class Home extends Component {
                 <img src="../images/command-old.png" className="mini-logo" />
                 <h3>See your personal recomendation</h3>
               </div>
+             
             </div>
           </div>
         </section>
       </div>
+      
     );
   }
 }

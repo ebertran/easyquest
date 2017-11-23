@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-export default class InputFormArea extends Component {
+export default class InputFormText extends Component {
   constructor(props) {
     super(props);
   }
 
   handleChange = e => {
-    this.props.changeState(this.props.id, e.target.value);
+    this.props.changeState(this.props.index, this.props.id, e.target.value);
   };
 
   capitalizeFirstLetter = string => {
@@ -20,13 +20,11 @@ export default class InputFormArea extends Component {
           {this.capitalizeFirstLetter(this.props.id)}
         </label>
         <div className="col-sm-9">
-          <textarea
+          <input
             type={this.props.type}
             className="form-control"
-            rows={4}
             id={this.props.id}
             placeholder={this.props.placeholder}
-            defaultValue={""}
             onChange={this.handleChange}
           />
         </div>

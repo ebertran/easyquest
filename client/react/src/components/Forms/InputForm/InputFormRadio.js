@@ -6,7 +6,7 @@ export default class InputFormRadio extends Component {
     }
 
     handleChange = option => {
-        this.props.changeState(this.props.id, option)
+        this.props.changeState(this.props.index, this.props.id, option)
     }
 
     capitalizeFirstLetter = string => {

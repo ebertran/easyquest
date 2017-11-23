@@ -41,6 +41,10 @@ footer.margins {
     height: 200px;
 }
 
+.super-title {
+    font-size: 220%;
+}
+
 .avatar {
     width: 150px;
     height: 150px;
@@ -56,4 +60,8 @@ footer.margins {
 
 .user-tests-box {
     padding-bottom: 20px;
+}
+
+#thumbnails-info {
+    margin-bottom: 20px;
 }

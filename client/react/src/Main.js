@@ -4,8 +4,8 @@ import { HashRouter, Switch, Route, NavLink } from "react-router-dom";
 import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
 import QuizList from "./components/QuizList";
-import QuizForm from "./components/QuizForm";
-import UserForm from "./components/UserForm";
+import QuizForm from "./components/Forms/QuizForm";
+import UserForm from "./components/Forms/UserForm";
 
 class Main extends Component {
   constructor() {
