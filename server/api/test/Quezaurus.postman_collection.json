@@ -1,17 +1,20 @@
 {
 	"info": {
 		"name": "Quezaurus",
-		"_postman_id": "3aa6b8b7-eeae-1bc6-55fd-7d42c8eb5942",
+		"_postman_id": "e76101d3-e1dc-2f18-aefc-3a19e27136b7",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "/api/quizs/list",
+			"name": "quizs list",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3000/api/quizs",
 					"protocol": "http",
@@ -23,17 +26,19 @@
 						"api",
 						"quizs"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "/api/users/list",
+			"name": "users list",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3000/api/users",
 					"protocol": "http",
@@ -44,6 +49,50 @@
 					"path": [
 						"api",
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users retrieve",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/users/5a04c5ae1d195c4e88dbfcaa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"5a04c5ae1d195c4e88dbfcaa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quizs retrieve",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/quizs/5a04c5ae1d195c4e88dbfca1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quizs",
+						"5a04c5ae1d195c4e88dbfca1"
 					]
 				},
 				"description": ""
