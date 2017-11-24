@@ -50,11 +50,13 @@ class QuizForm extends Component {
   
   handleClickSubmit = (e) => {
     e.preventDefault()
-    this.setState(function(prevState) {
-      return {
-        // TODO Post the state to create quiz
-      };
-    });
+    return 
+      this.axios.post('https://desolate-bastion-53155.herokuapp.com/api/quizs', { 
+        quizPersonal: this.state.quizPersonal, 
+        questions: this.state.questions
+      })
+      .then(console.log)
+      .catch(console.error)
   };
 
   setPersonalInfo = (index, key, value) => {
