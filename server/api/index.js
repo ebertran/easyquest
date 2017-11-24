@@ -32,6 +32,24 @@ router.route('/users')
             })
 
     })
+    .post((req, res) => {
+        const { username, email, password, name, surname, birthdate, sex, zipcode, studies, occupation, organization} = req.body
+    
+            userData.create(username, email, password, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
+                .then(user => {
+                    res.json({
+                        status: 'OK',
+                        message: 'user created successfully',
+                        data: user
+                    })
+                })
+                .catch(err => {
+                    res.json({
+                        status: 'KO',
+                        message: err.message
+                    })
+                })
+        })
 
 router.route('/users/:id')
     .get((req, res) => {

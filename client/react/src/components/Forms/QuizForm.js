@@ -9,6 +9,9 @@ import InputFormText from "./InputForm/InputFormText";
 import InputFormRadio from "./InputForm/InputFormRadio";
 import InputFormArea from "./InputForm/InputFormArea";
 
+import Logic from "../../logic/Logic";
+const logic = new Logic()
+
 class QuizForm extends Component {
   constructor() {
     super();
@@ -51,7 +54,7 @@ class QuizForm extends Component {
   handleClickSubmit = (e) => {
     e.preventDefault()
     return 
-      this.axios.post('https://desolate-bastion-53155.herokuapp.com/api/quizs', { 
+      logic.createQuiz('https://desolate-bastion-53155.herokuapp.com/api/quizs', { 
         quizPersonal: this.state.quizPersonal, 
         questions: this.state.questions
       })

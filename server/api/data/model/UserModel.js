@@ -3,15 +3,19 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   username: String,
-  password: String,
   email: String,
+  password: String,
   name: String,
   surname: String,
-  
+  birthdate: Date,
+  sex: String,
+  zipcode: String,
+  studies: String,
+  occupation: String,
+  organization: String, 
   quizs: [
     {
       id: String,
-      // id: { type: Schema.ObjectId, ref: "Quiz" },
       answers: [Number]
     }
   ]

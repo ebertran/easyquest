@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Quezaurus",
-		"_postman_id": "e76101d3-e1dc-2f18-aefc-3a19e27136b7",
+		"_postman_id": "8afe649a-3d2d-8169-f710-ae7dc965edd5",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -16,12 +16,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/quizs",
+					"raw": "http://localhost:3001/api/quizs",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"api",
 						"quizs"
@@ -40,12 +40,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/users",
+					"raw": "http://localhost:3001/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"api",
 						"users"
@@ -61,12 +61,12 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/api/users/5a04c5ae1d195c4e88dbfcaa",
+					"raw": "http://localhost:3001/api/users/5a04c5ae1d195c4e88dbfcaa",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"api",
 						"users",
@@ -83,16 +83,75 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/api/quizs/5a04c5ae1d195c4e88dbfca1",
+					"raw": "http://localhost:3001/api/quizs/5a04c5ae1d195c4e88dbfca1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"api",
 						"quizs",
 						"5a04c5ae1d195c4e88dbfca1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": \"5a04c5ae1d195c4e88dbfcab\",\n\t\"author\": \"Micheloncio\",\n    \"field\": \"Psychology\",\n    \"tags\": [\"personality\",\"animals\"],\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate diam metus, id tristique tellus laoreet vel. Curabitur ut interdum nisl. Donec elementum, nibh vitae pulvinar gravida, eros eros faucibus risus, vitae blandit felis sem ut nibh. Sed commodo arcu libero, ut tristique neque tincidunt et.\",\n    \"version\": \"4.0\",\n    \"scope\": true,\n    \"allowedUsers\": [],\n    \"active\": true,\n    \"questions\": [\n    {\n        \"text\": \"Tienes humanos?\",\n        \"answers\": [\n        {\n            \"text\": \"Si\",\n            \"dimension\": \"human lover\",\n            \"value\": 0.8\n        },\n        {\n            \"text\": \"No\",\n            \"dimension\": \"human lover\",\n            \"value\": 0.5\n        }]\n    },\n    {\n        \"text\": \"Comes carne humana habitualmente?\",\n        \"answers\": [\n        {\n            \"text\": \"Si\",\n            \"dimension\": \"human eater\",\n            \"value\": 0.9\n        },\n        {\n            \"text\": \"No\",\n            \"dimension\": \"human eater\",\n            \"value\": 0.1\n        }]\n    }]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/quizs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"quizs"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"username\": \"Walter\",\n    \"email\": \"walta@haoffh.com\",\n    \"password\": \"123\",\n    \"name\": \"Anabel\",\n    \"surname\": \"Gore\",\n    \"birthdate\": \"1989-07-15T23:32:18Z\",\n    \"sex\": \"trans\",\n    \"zipcode\": \"08980\",\n    \"studies\": \"none\",\n    \"occupation\": \"Developer\",\n    \"organization\": \"Dot Dude\",\n    \"quizs\": []\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users"
 					]
 				},
 				"description": ""

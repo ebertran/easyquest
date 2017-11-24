@@ -7,7 +7,7 @@ class UserData {
         return { id: _id, username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization, quizs }
     }
 
-    create(username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization, quizs) {
+    create(username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization) {
         return new Promise((resolve, reject) => {
             if (!username)
                 throw new Error(`username cannot be ${username}`)
@@ -24,13 +24,11 @@ class UserData {
             if (!surname)
                 throw new Error(`surname cannot be ${surname}`)
 
-            if (typeof quizs !== 'object')
-                throw new Error(`quizs cannot be ${quizs}`)
 
-            const quiz = new Quiz({ username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization, quizs })
+            const user = new User({ username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization})
 
-            quiz.save()
-                .then(quiz => resolve(this._normalize(quiz)))
+            user.save()
+                .then(user => resolve(this._normalize(user)))
                 .catch(reject)
         })
     }

@@ -6,6 +6,10 @@ class QuizApi {
         this.usersEndpoint = `${url}/users`
     }
 
+    createQuiz() {
+        return axios.post(this.quizsEndpoint).then(({ data }) => data)
+    }
+
     listQuizs() {
         return axios.get(this.quizsEndpoint).then(({ data }) => data)
     }
