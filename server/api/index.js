@@ -14,8 +14,6 @@ const router = express.Router()
 const userData = new(require('./data/UserData.js'))
 const quizData = new(require('./data/QuizData.js'))
 
-
-
 router.route('/users')
     .get((req, res) => {
         userData.list()
@@ -91,7 +89,7 @@ router.route('/quizs')
             })
     })
 
-router.route('/quiz/:id')
+router.route('/quizs/:id')
     .get((req, res) => {
         const id = req.params.id
 

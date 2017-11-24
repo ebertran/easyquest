@@ -1,6 +1,6 @@
 [
 {
-    "_id": "5a04c5ae1d195c4e88dbfcaa",
+    "_id": {"$oid" : "5a04c5ae1d195c4e88dbfcaa"},
     "username": "Warki",
     "password": "123",
     "name": "Pepito",

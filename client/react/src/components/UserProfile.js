@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
+import Logic from "../logic/Logic"
+const logic = new Logic()
+
 class UserProfile extends Component {
     constructor() {
         super()
@@ -11,9 +14,8 @@ class UserProfile extends Component {
     }
 
     componentDidMount() {
-        //axios.get('http://localhost:3000/api/users')
-        axios.get('https://desolate-bastion-53155.herokuapp.com/api/users')
-            .then(({data:{data:users}}) => {
+        logic.listUsers()
+            .then(users => {
                 const [user] = users.filter(user => user.id === "5a04c5ae1d195c4e88dbfcaa")
 
                 this.setState({user})

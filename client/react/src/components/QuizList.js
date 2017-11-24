@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import axios from 'axios'
+import React, { Component } from "react"
 
-import UserProfile from "./UserProfile";
+import UserProfile from "./UserProfile"
+
+import Logic from "../logic/Logic"
+const logic = new Logic()
 
 class QuizList extends Component {
   constructor() {
@@ -13,9 +15,8 @@ class QuizList extends Component {
   }
 
   componentDidMount() {
-    //axios.get('http://localhost:3000/api/quizs')
-    axios.get('https://desolate-bastion-53155.herokuapp.com/api/quizs')
-            .then(({data:{data:quizs}}) => {
+    logic.listQuizs()
+            .then(quizs => {
                 quizs = quizs.filter(quiz => quiz.user === "5a04c5ae1d195c4e88dbfcaa")
                 console.log('holaaaa', quizs)
                 this.setState({quizs})

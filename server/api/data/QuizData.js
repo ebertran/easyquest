@@ -58,8 +58,9 @@ class QuizData {
             if (!id)
                 throw new Error(`id cannot be ${id}`)
 
-            Quiz.findById(id)
-                .then(quiz => resolve(this._normalize(quiz)))
+            Quiz.findById(id).exec()
+                .then(quiz => 
+                    resolve(this._normalize(quiz)))
                 .catch(reject)
         })
     }
