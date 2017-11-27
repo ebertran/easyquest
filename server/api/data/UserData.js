@@ -53,6 +53,9 @@ class UserData {
         })
     }
 
+    searchUsers(query) {
+		return User.filter(user => user.username.includes(query))
+	}
 
     list() {
         return User.find()

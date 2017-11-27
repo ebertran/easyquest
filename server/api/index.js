@@ -16,6 +16,20 @@ const quizData = new(require('./data/QuizData.js'))
 
 router.route('/users')
     .get((req, res) => {
+        const query = req.query.query
+
+        if (query) {
+            const search = usersData.searchUsers(query).map(user => ({ id: user.id, username: user.username }))
+
+            log.info(`searched users matching query "${query}" succeeded`)
+
+            res.json({
+                status: 'OK',
+                message: 'users searched successfully',
+                data: search
+            })
+        } else {
+
         userData.list()
             .then(users => {
                 res.json({

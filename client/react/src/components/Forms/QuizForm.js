@@ -64,17 +64,27 @@ class QuizForm extends Component {
   handleClickSubmit = e => {
     e.preventDefault()
 
-    const _questions = this.state.questions.map((question) => {
-      return {
-        text: question.text,
-        answers: question.answers.map((answer) => {
-        return {
-          text: answer.text,
-          dimension: answer.dimension,
-          value: answer.value
-          }
-        })
-      }
+    const _questions = this.state.questions.map(question => {
+      const _question = {}
+
+      _question.text = question.question
+
+      _question.answers = []
+
+      const _answer1 = {}
+      _answer1.text = question.answer1
+      _answer1.dimension = question.dimension1
+      _answer1.value = question.value1
+
+      const _answer2 = {}
+      _answer2.text = question.answer2
+      _answer2.dimension = question.dimension2
+      _answer2.value = question.value2
+
+      _question.answers.push(_answer1)
+      _question.answers.push(_answer2)
+
+      return _question
     })
 
     logic
@@ -87,7 +97,7 @@ class QuizForm extends Component {
         version: this.state.quizPersonal.version,
         questions: _questions
       }
-    )
+      )
       .then(console.log)
       .catch(console.error);
   };

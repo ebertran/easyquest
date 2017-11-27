@@ -18,6 +18,11 @@ const Header = () => (
         </NavLink>
       </li>
       <li>
+        <NavLink to="/quiz-search" activeClassName="active">
+          Search quizs
+        </NavLink>
+      </li>
+      <li>
         <NavLink to="/quiz-form" activeClassName="active">
           Create new quiz
         </NavLink>

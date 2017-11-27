@@ -29,7 +29,12 @@ class Logic {
             .then(({data}) => data)
     }
 
-    listUserQuizs() {
+    listQuizsByUser() {
+        return this.listQuizs()
+            .then(quizs => quizs.filter(quiz => quiz.user === this.getUser()._id))
+    }
+
+    listQuizsBySearch() {
         return this.listQuizs()
             .then(quizs => quizs.filter(quiz => quiz.user === this.getUser()._id))
     }

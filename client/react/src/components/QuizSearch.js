@@ -1,22 +1,21 @@
 import React, { Component } from "react";
 
-import UserProfile from "./UserProfile";
-
 import Logic from "../logic/Logic";
 const logic = new Logic();
 
-class QuizList extends Component {
+class QuizSearch extends Component {
   constructor() {
     super();
 
     this.state = {
+      query: "",
       quizs: []
     };
   }
 
   componentDidMount() {
     logic
-      .listQuizsByUser()
+      .listQuizsBySearch()
       .then(quizs => {
         this.setState({ quizs });
       })
@@ -30,21 +29,12 @@ class QuizList extends Component {
       <div className="container">
         <div className="row">
           <div>
-            <UserProfile />
-            <div className="col-sm-10">
-              <section className="text-center panel panel-default">
-                <div className="text-left panel-heading  custom-logo">
+            <div className="col-sm-12">
+              <section className="panel panel-default">
+                <div className="text-center panel-heading  custom-logo">
                   <div className="">
                     <h2>
-                      Your tests
-                      <a href="#">
-                        <button
-                          type="button"
-                          className="btn btn-primary pull-right"
-                        >
-                          Create a new test!
-                        </button>
-                      </a>
+                      Search results
                     </h2>
                   </div>
                 </div>
@@ -54,25 +44,14 @@ class QuizList extends Component {
                       return (
                         <div key={index} className="col-sm-4 user-tests-box">
                           <h4>{quiz.title}</h4>
+                          <h5>Quizer: <a>username</a></h5>
                           <p>{quiz.description}</p>
                           <br />
                           <button
                             type="button"
                             className="btn btn-space btn-primary"
                           >
-                            Results
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-space btn-success"
-                          >
-                            Edit
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-space btn-danger"
-                          >
-                            Delete
+                            Do it!
                           </button>
                         </div>
                       );
@@ -88,4 +67,4 @@ class QuizList extends Component {
   }
 }
 
-export default QuizList;
+export default QuizSearch;
