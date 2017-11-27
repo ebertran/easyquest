@@ -15,9 +15,8 @@ class QuizList extends Component {
   }
 
   componentDidMount() {
-    logic.listQuizs()
+    logic.listUserQuizs()
             .then(quizs => {
-                quizs = quizs.filter(quiz => quiz.user === "5a04c5ae1d195c4e88dbfcaa")
                 this.setState({quizs})
             })
             .catch(function (err) {
