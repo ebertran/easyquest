@@ -81,3 +81,8 @@ footer.margins {
 .buttonFull {
     width: 40%;
 }
+
+.thumbnails-info {
+    margin-top: 260px;
+    margin-bottom: 30px;
+}

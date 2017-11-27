@@ -12,7 +12,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <header className="row">
           <div className="col-sm-offset-1 col-sm-5">
             <img className="logo" src="../images/t-rex.png" alt="#" />
@@ -70,8 +70,8 @@ class Home extends Component {
             <h1 className="text-center">When quizs ruled the Earth</h1>
           </div>
         </header>
-        <section className="text-center">
-          <div id="thumbnails-info" className="container">
+        <section className="thumbnails-info text-center">
+          <div className="container">
             <div className="row">
               <div className="text-center col-sm-4">
                 <img src="../images//command.png" className="mini-logo" />
