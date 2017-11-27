@@ -2,7 +2,7 @@ import Xtorage from '../utils/Xtorage'
 
 class Logic {
     constructor() {
-        Xtorage.session.setObject('user', { _id: '5a04c5ae1d195c4e88dbfcab' })
+        Xtorage.session.setObject('user', { _id: '5a04c5ae1d195c4e88dbfcaa' })
 
         this.api = new(require('./api/Api'))('http://localhost:3001/api')
         // this.quizApi = new(require('./api/QuizApi'))('https://desolate-bastion-53155.herokuapp.com/api')
@@ -39,7 +39,7 @@ class Logic {
             .then(({data}) => data)
     }
 
-    retrieveUser(id) {
+    retrieveUser() {
         return this.listUsers()
             .then(users => {
                 const [user] = users.filter(user => user._id === this.getUser()._id)

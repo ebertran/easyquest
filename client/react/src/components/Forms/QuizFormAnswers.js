@@ -64,14 +64,14 @@ class QuizForm extends Component {
   handleClickSubmit = e => {
     e.preventDefault()
 
-    const _questions = this.state.questions.map((question) => {
+    const _questions = questions.map((question) => {
       return {
-        text: question.text,
-        answers: question.answers.map((answer) => {
+        text: this.state.question.text,
+        answers: this.state.question.answers.map((answer) => {
         return {
-          text: question.answers.text,
-          dimension: question.answers.dimension,
-          value: question.answers.value
+          text: this.state.question.answers.text,
+          dimension: this.state.question.answers.dimension,
+          value: this.state.question.answers.value
           }
         })
       }
@@ -127,6 +127,12 @@ class QuizForm extends Component {
                     {this.state.newQuizs}
                     <div className="form-group">
                       <div className="col-sm-12">
+                        <button
+                          className="buttonFull pull-left btn btn-warning"
+                          onClick={this.handleClickAddAnswer}
+                        >
+                          Add answer
+                        </button>
                         <button
                           className="buttonFull pull-left btn btn-success"
                           onClick={this.handleClickAddQuestion}

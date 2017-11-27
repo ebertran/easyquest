@@ -15,12 +15,8 @@ class UserProfile extends Component {
 
   componentDidMount() {
     logic
-      .listUsers()
-      .then(users => {
-        const [user] = users.filter(
-          user => user._id === "5a04c5ae1d195c4e88dbfcab"
-        );
-
+      .retrieveUser()
+      .then(user => {
         this.setState({ user });
       })
       .catch(function(err) {

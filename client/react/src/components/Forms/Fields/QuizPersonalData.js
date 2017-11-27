@@ -15,13 +15,13 @@ changeState={props.changeState}
 
 <InputForm
 type="text"
-id="Author"
+id="author"
 placeholder="Enter author"
 changeState={props.changeState}
 />
 <InputForm
 type="text"
-id="Field"
+id="field"
 placeholder="Enter field"
 changeState={props.changeState}
 />

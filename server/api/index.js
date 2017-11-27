@@ -89,9 +89,9 @@ router.route('/quizs')
             })
     })
     .post((req, res) => {
-        const { user, title, author, field, tags, description, version, scope, allowedUsers, active, questions } = req.body
+        const { user, title, author, field, tags, description, version, questions } = req.body
 
-        quizData.create(user, title, author, field, tags, description, version, scope, allowedUsers, active, questions)
+        quizData.create(user, title, author, field, tags, description, version, questions)
             .then(quiz => {
                 res.json({
                     status: 'OK',
