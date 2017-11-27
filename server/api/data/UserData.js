@@ -1,19 +1,20 @@
 const User = require('./model/UserModel')
 
 class UserData {
-    _normalize(user) {
-        const { _id, username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization, quizs } = user
 
-        return { id: _id, username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization, quizs }
-    }
-
-    create(username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization) {
+    create(username, password, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization) {
         return new Promise((resolve, reject) => {
             if (!username)
                 throw new Error(`username cannot be ${username}`)
             
             if (!password)
                 throw new Error(`password cannot be ${password}`)
+
+            if (!avatar)
+                throw new Error(`avatar cannot be ${avatar}`)
+
+            if (typeof rex !== 'boolean')
+                throw new Error(`rex cannot be ${rex}`)
 
             if (!email)
                 throw new Error(`email cannot be ${email}`)
@@ -24,11 +25,30 @@ class UserData {
             if (!surname)
                 throw new Error(`surname cannot be ${surname}`)
 
+            if (!birthdate)
+                throw new Error(`birthdate cannot be ${birthdate}`)
 
-            const user = new User({ username, password, email, name, surname, birthdate, sex, zipcode, studies, ocupation, organization})
+            if (!sex)
+                throw new Error(`sex cannot be ${sex}`)
+            
+            if (!zipcode)
+                throw new Error(`zipcode cannot be ${zipcode}`)
+
+            if (!occupation)
+                throw new Error(`occupation cannot be ${occupation}`)
+
+            if (!organization)
+                throw new Error(`organization cannot be ${organization}`)
+
+            if (!quizs)
+                throw new Error(`quizs cannot be ${quizs}`)
+            
+
+
+            const user = new User({ username, password, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization})
 
             user.save()
-                .then(user => resolve(this._normalize(user)))
+                .then(resolve)
                 .catch(reject)
         })
     }
@@ -36,7 +56,6 @@ class UserData {
 
     list() {
         return User.find()
-            .then(users => users.map(user => this._normalize(user)))
     }
 
     retrieve(id) {
@@ -45,7 +64,7 @@ class UserData {
                 throw new Error(`id cannot be ${id}`)
 
             User.findById(id)
-                .then(user => resolve(this._normalize(user)))
+                .then(resolve)
                 .catch(reject)
         })
     }
