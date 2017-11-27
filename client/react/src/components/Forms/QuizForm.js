@@ -69,9 +69,9 @@ class QuizForm extends Component {
         text: question.text,
         answers: question.answers.map((answer) => {
         return {
-          text: question.answers.text,
-          dimension: question.answers.dimension,
-          value: question.answers.value
+          text: answer.text,
+          dimension: answer.dimension,
+          value: answer.value
           }
         })
       }
