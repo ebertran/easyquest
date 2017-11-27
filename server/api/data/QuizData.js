@@ -1,13 +1,6 @@
 const Quiz = require('./model/QuizModel')
-// const User = require('./model/UserModel')
 
 class QuizData {
-    _normalize(quiz) {
-        const { _id, user, title, author, field, tags, description, version, scope, allowedUsers, active, questions } = quiz
-
-        return { id: _id, user, title, author, field, tags, description, version, scope, allowedUsers, active, questions }
-    }
-
     create(user, title, author, field, tags, description, version, scope, allowedUsers, active, questions) {
         return new Promise((resolve, reject) => {
             if (!user)
@@ -43,14 +36,13 @@ class QuizData {
             const quiz = new Quiz({ user, title, author, field, tags, description, version, scope, allowedUsers, active, questions })
 
             quiz.save()
-                .then(quiz => resolve(this._normalize(quiz)))
+                .then(resolve)
                 .catch(reject)
         })
     }
 
     list() {
         return Quiz.find()
-            .then(quizs => quizs.map(quiz => this._normalize(quiz)))
     }
 
     retrieve(id) {
@@ -59,8 +51,7 @@ class QuizData {
                 throw new Error(`id cannot be ${id}`)
 
             Quiz.findById(id).exec()
-                .then(quiz => 
-                    resolve(this._normalize(quiz)))
+                .then(resolve)
                 .catch(reject)
         })
     }
