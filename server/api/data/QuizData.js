@@ -1,7 +1,7 @@
 const Quiz = require('./model/QuizModel')
 
 class QuizData {
-    create(user, title, author, field, tags, description, version, scope, allowedUsers, active, questions) {
+    create(user, title, author, field, tags, description, version,/* scope, allowedUsers, active,*/ questions) {
         return new Promise((resolve, reject) => {
             if (!user)
                 throw new Error(`user cannot be ${user}`)
@@ -21,19 +21,19 @@ class QuizData {
             if (!version)
                 throw new Error(`version cannot be ${version}`)
 
-            if (!allowedUsers)
-                throw new Error(`allowedUsers cannot be ${allowedUsers}`)
+            // if (!allowedUsers)
+            //     throw new Error(`allowedUsers cannot be ${allowedUsers}`)            
+            
+            // if (typeof scope !== 'boolean')
+            //     throw new Error(`scope cannot be ${scope}`)
+
+            // if (typeof active !== 'boolean')
+            //     throw new Error(`active cannot be ${active}`)
 
             if (!questions)
                 throw new Error(`questions cannot be ${questions}`)
-            
-            if (typeof scope !== 'boolean')
-                throw new Error(`scope cannot be ${scope}`)
 
-            if (typeof active !== 'boolean')
-                throw new Error(`active cannot be ${active}`)
-
-            const quiz = new Quiz({ user, title, author, field, tags, description, version, scope, allowedUsers, active, questions })
+            const quiz = new Quiz({ user, title, author, field, tags, description, version,/* scope, allowedUsers, active,*/ questions })
 
             quiz.save()
                 .then(resolve)

@@ -18,21 +18,17 @@ class Main extends Component {
 
   render() {
     return (
-        <content>
-          <div className="container">
-            <div className="row">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/user-profile" component={UserProfile} />
-                <Route path="/quiz-list" component={QuizList} />
-                <Route path="/quiz-form" component={QuizForm} />
-                <Route path="/user-form" component={UserForm} />
-                {/* <Route path='/about' component={ About } />
+      <content>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/user-profile" component={UserProfile} />
+          <Route path="/quiz-list" component={QuizList} />
+          <Route path="/quiz-form" component={QuizForm} />
+          <Route path="/user-form" component={UserForm} />
+          {/* <Route path='/about' component={ About } />
           <Route path='/contact' component={ Contact } /> */}
-              </Switch>
-            </div>
-          </div>
-        </content>
+        </Switch>
+      </content>
     );
   }
 }

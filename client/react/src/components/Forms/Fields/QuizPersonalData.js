@@ -43,7 +43,7 @@ id="version"
 placeholder="Enter version"
 changeState={props.changeState}
 />
-<InputFormRadio
+{/* <InputFormRadio
 type="radio"
 id="scope"
 options={["public", "private"]}
@@ -60,7 +60,7 @@ type="radio"
 id="active"
 options={["on", "off"]}
 changeState={props.changeState}
-/>
+/> */}
 </div>
 
 export default QuizPersonalData;

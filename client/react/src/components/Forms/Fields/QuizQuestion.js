@@ -33,7 +33,7 @@ changeState={props.changeState}
 <InputForm
 type="number"
 id="value1"
-placeholder="Enter value 1"
+placeholder="Enter value 1 (use only numbers)"
 index={props.index}
 changeState={props.changeState}
 />
@@ -57,7 +57,7 @@ changeState={props.changeState}
 <InputForm
 type="number"
 id="value2"
-placeholder="Enter value 2"
+placeholder="Enter value 2 (use only numbers)"
 index={props.index}
 changeState={props.changeState}
 />

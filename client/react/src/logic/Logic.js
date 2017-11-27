@@ -12,8 +12,9 @@ class Logic {
         return Xtorage.session.getObject('user')
     }
 
-    createQuiz() {
-        return this.api.createQuiz()
+    createQuiz(quiz) {
+        quiz.user = this.getUser()._id
+        return this.api.createQuiz(quiz)
             .then(({data}) => data)
     }
 
