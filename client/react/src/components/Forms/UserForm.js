@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import UserFields from "./Fields/UserFields";
-import InputForm from "./InputForm/InputFormText";
-import InputFormRadio from "./InputForm/InputFormRadio";
-import InputFormArea from "./InputForm/InputFormArea";
+import UserFields from "./fields/UserFields";
+import InputForm from "./inputForm/InputFormText";
+import InputFormRadio from "./inputForm/InputFormRadio";
+import InputFormArea from "./inputForm/InputFormArea";
 
 class UserForm extends Component {
   constructor() {

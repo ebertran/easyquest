@@ -32,6 +32,11 @@ const Header = () => (
           Register Now!
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/quiz" activeClassName="active">
+          Quiz
+        </NavLink>
+      </li>
       {/* <li>
           <NavLink to="/about" activeClassName="active">About us</NavLink>
           </li>

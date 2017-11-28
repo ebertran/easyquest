@@ -29,20 +29,40 @@ class Logic {
             .then(({data}) => data)
     }
 
+    retrieveQuiz(quizId) {
+        return this.listQuizs()
+            .then(quizs => {
+                const [quiz] = quizs.filter(quiz => quiz._id === quizId)
+                
+                return quiz
+            })
+    }
+
     listQuizsByUser() {
         return this.listQuizs()
             .then(quizs => quizs.filter(quiz => quiz.user === this.getUser()._id))
     }
 
-    listQuizsBySearch() {
+    listQuizsByTitle(query) {
         return this.listQuizs()
-            .then(quizs => quizs.filter(quiz => quiz.user === this.getUser()._id))
+            .then(quizs => quizs.filter(quiz =>  quiz.title === query))
     }
+
+    listQuizsByAuthor(query) {
+        return this.listQuizs()
+            .then(quizs => quizs.filter(quiz =>  quiz.author === query))
+    }
+
+
+    // const list = this.state.users
+    // .filter(d => this.state.input === '' || d.includes(this.state.input))
 
     listUsers() {
         return this.api.listUsers()
             .then(({data}) => data)
     }
+
+
 
     retrieveUser() {
         return this.listUsers()

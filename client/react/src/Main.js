@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
 import QuizList from "./components/QuizList";
 import QuizSearch from "./components/QuizSearch";
+// import Quiz from "./quiz/Quiz";
 import QuizForm from "./components/Forms/QuizForm";
 import UserForm from "./components/Forms/UserForm";
 
@@ -27,6 +28,7 @@ class Main extends Component {
           <Route path="/quiz-form" component={QuizForm} />
           <Route path="/user-form" component={UserForm} />
           <Route path="/quiz-search" component={QuizSearch} />
+          {/* <Route path="/quiz" component={Quiz} /> */}
           {/* <Route path='/about' component={ About } />
           <Route path='/contact' component={ Contact } /> */}
         </Switch>

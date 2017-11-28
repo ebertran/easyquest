@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import InputForm from "../InputForm/InputFormText";
-import InputFormRadio from "../InputForm/InputFormRadio";
-import InputFormArea from "../InputForm/InputFormArea";
+import InputForm from "../inputForm/InputFormText";
+import InputFormRadio from "../inputForm/InputFormRadio";
+import InputFormArea from "../inputForm/InputFormArea";
 
 const QuizPersonalData = (props) => 
 <div>
@@ -61,6 +61,31 @@ id="active"
 options={["on", "off"]}
 changeState={props.changeState}
 /> */}
+<InputForm
+type="text"
+id="dimension1"
+placeholder="Enter dimension 1"
+changeState={props.changeState}
+/>
+<InputForm
+type="text"
+id="dimension2"
+placeholder="Enter dimension 2"
+changeState={props.changeState}
+/>
+<InputForm
+type="text"
+id="dimension3"
+placeholder="Enter dimension 3"
+changeState={props.changeState}
+/>
+<InputForm
+type="text"
+id="dimension4"
+placeholder="Enter dimension 4"
+changeState={props.changeState}
+/>
 </div>
+
 
 export default QuizPersonalData;

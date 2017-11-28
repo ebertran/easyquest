@@ -44,7 +44,7 @@ router.route('/users')
                     message: err.message
                 })
             })
-
+        }
     })
     .post((req, res) => {
         const { username, email, password, name, surname, birthdate, sex, zipcode, studies, occupation, organization} = req.body

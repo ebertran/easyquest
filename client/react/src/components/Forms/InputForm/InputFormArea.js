@@ -23,7 +23,8 @@ export default class InputFormArea extends Component {
           <textarea
             type={this.props.type}
             className="form-control"
-            rows={4}
+            maxlength="350"
+            rows={4}  
             id={this.props.id}
             placeholder={this.props.placeholder}
             defaultValue={""}

@@ -1,0 +1,16 @@
+.question-block{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.question-block legend,
+.question-block button {
+  margin-bottom: 25px;
+}
+.question-block button {
+  white-space:normal !important;
+  word-wrap: break-word; 
+}
+#thumbnails-info a {
+  display: inline-block;
+  max-width: 200px;
+} 

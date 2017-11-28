@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import InputForm from "../InputForm/InputFormText";
-import InputFormRadio from "../InputForm/InputFormRadio";
-import InputFormArea from "../InputForm/InputFormArea";
+import InputForm from "../inputForm/InputFormText";
+import InputFormRadio from "../inputForm/InputFormRadio";
+import InputFormArea from "../inputForm/InputFormArea";
 
 const UserFields = (props) => (
   <div>

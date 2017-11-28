@@ -29,6 +29,14 @@ class QuizData {
 
             // if (typeof active !== 'boolean')
             //     throw new Error(`active cannot be ${active}`)
+            if (!dimension1)
+                throw new Error(`dimension1 cannot be ${dimension1}`)
+            if (!dimension2)
+                throw new Error(`dimension2 cannot be ${dimension2}`)
+            if (!dimension3)
+                throw new Error(`dimension3 cannot be ${dimension3}`)
+            if (!dimension4)
+                throw new Error(`dimension4 cannot be ${dimension4}`)
 
             if (!questions)
                 throw new Error(`questions cannot be ${questions}`)

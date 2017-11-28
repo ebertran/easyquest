@@ -3,11 +3,11 @@ import axios from "axios";
 import uuidv4 from "uuid/v4";
 
 import UserProfile from "../UserProfile";
-import QuizPersonalData from "./Fields/QuizPersonalData";
-import QuizQuestion from "./Fields/QuizQuestion";
-import InputFormText from "./InputForm/InputFormText";
-import InputFormRadio from "./InputForm/InputFormRadio";
-import InputFormArea from "./InputForm/InputFormArea";
+import QuizPersonalData from "./fields/QuizPersonalData";
+import QuizQuestion from "./fields/QuizQuestion";
+import InputFormText from "./inputForm/InputFormText";
+import InputFormRadio from "./inputForm/InputFormRadio";
+import InputFormArea from "./inputForm/InputFormArea";
 
 import Logic from "../../logic/Logic";
 const logic = new Logic();
