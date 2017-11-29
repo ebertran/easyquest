@@ -10,13 +10,6 @@ const QuizSchema = new Schema(
     tags: String,
     description: String,
     version: String,
-    // scope: Boolean,
-    // allowedUsers: [String],
-    // active: Boolean,
-    dimension1: String,
-    dimension2: String,
-    dimension3: String,
-    dimension4: String,
     questions: [
       {
         text: String,

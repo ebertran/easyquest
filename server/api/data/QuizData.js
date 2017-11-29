@@ -1,11 +1,11 @@
 const Quiz = require('./model/QuizModel')
 
 class QuizData {
-    create(user, title, author, field, tags, description, version,/* scope, allowedUsers, active,*/ questions) {
+    create(user, title, author, field, tags, description, version, questions) {
         return new Promise((resolve, reject) => {
             if (!user)
                 throw new Error(`user cannot be ${user}`)
-            
+
             if (!author)
                 throw new Error(`author cannot be ${author}`)
 
@@ -21,27 +21,10 @@ class QuizData {
             if (!version)
                 throw new Error(`version cannot be ${version}`)
 
-            // if (!allowedUsers)
-            //     throw new Error(`allowedUsers cannot be ${allowedUsers}`)            
-            
-            // if (typeof scope !== 'boolean')
-            //     throw new Error(`scope cannot be ${scope}`)
-
-            // if (typeof active !== 'boolean')
-            //     throw new Error(`active cannot be ${active}`)
-            if (!dimension1)
-                throw new Error(`dimension1 cannot be ${dimension1}`)
-            if (!dimension2)
-                throw new Error(`dimension2 cannot be ${dimension2}`)
-            if (!dimension3)
-                throw new Error(`dimension3 cannot be ${dimension3}`)
-            if (!dimension4)
-                throw new Error(`dimension4 cannot be ${dimension4}`)
-
             if (!questions)
                 throw new Error(`questions cannot be ${questions}`)
 
-            const quiz = new Quiz({ user, title, author, field, tags, description, version,/* scope, allowedUsers, active,*/ questions })
+            const quiz = new Quiz({ user, title, author, field, tags, description, version, questions })
 
             quiz.save()
                 .then(resolve)

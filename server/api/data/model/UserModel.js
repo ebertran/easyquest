@@ -17,11 +17,16 @@ const UserSchema = new Schema({
   zipcode: String,
   studies: String,
   occupation: String,
-  organization: String, 
+  organization: String,
   quizs: [
     {
-      id: String,
-      answers: [Number]
+      _id: { type: Schema.Types.ObjectId },
+      questions: [
+        {
+          _id: { type: Schema.Types.ObjectId },
+          answer: { type: Schema.Types.ObjectId }
+        }
+      ]
     }
   ]
 });

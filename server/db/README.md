@@ -3,13 +3,13 @@
 ```bash
 $ mongoimport -d quezaurus -c users --drop --jsonArray --file data/users.json
 
-$ mongoexport -d quezaurus -c users --jsonArray -o data/users-exported.json
+$ mongoexport -d quezaurus -c users --jsonArray -o data/users.json
 ```
 
 ```bash
 $ mongoimport -d quezaurus -c quizs --drop --jsonArray --file data/quizs.json
 
-$ mongoexport -d quezaurus -c quizs --jsonArray -o data/quizs-exported.json
+$ mongoexport -d quezaurus -c quizs --jsonArray -o data/quizs.json
 ```
 
 ### From / to a json array file and a remote server (mLab)

@@ -72,6 +72,10 @@ class UserData {
         })
     }
 
+    addQuiz(/* TODO decide params here */) {
+        // TODO implement this method
+    }
+
 }
 
 module.exports = UserData
