@@ -81,21 +81,24 @@ class UserData {
     });
   }
 
-  addQuiz(userId, quizId, answers) {
+  addQuiz(userId, quizId, questions) {
     return new Promise((resolve, reject) => {
       if (!userId) throw new Error(`userId cannot be ${userId}`);
       if (!quizId) throw new Error(`quizId cannot be ${quizId}`);
-      if (!answers) throw new Error(`answers cannot be ${answers}`);
+      if (!questions) throw new Error(`answers cannot be ${questions}`);
 
       User.findByIdAndUpdate(userId, {
         $push: { quizs:
           {
-            "_id": quizId,
-            "questions": answers
+            _id: quizId,
+            questions
           }
       }})
+        .then(() => {
+          return this.retrieve(userId)
+        })
         .then(resolve)
-        .catch(reject);
+        .catch(reject)
     });
   }
 }
