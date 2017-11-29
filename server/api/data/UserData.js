@@ -82,24 +82,24 @@ class UserData {
   }
 
   addQuiz(userId, quizId, questions) {
-    return new Promise((resolve, reject) => {
+    // return new Promise((resolve, reject) => {
       if (!userId) throw new Error(`userId cannot be ${userId}`);
       if (!quizId) throw new Error(`quizId cannot be ${quizId}`);
       if (!questions) throw new Error(`answers cannot be ${questions}`);
 
-      User.findByIdAndUpdate(userId, {
+      return User.findByIdAndUpdate(userId, {
         $push: { quizs:
           {
             _id: quizId,
             questions
           }
-      }})
-        .then(() => {
-          return this.retrieve(userId)
-        })
-        .then(resolve)
-        .catch(reject)
-    });
+      }}).exec() // al fer exec() ja retorna una promesa...
+        // .then(() => {
+        //   return this.retrieve(userId)
+        // })
+        // .then(resolve)
+        // .catch(reject)
+    //});
   }
 }
 

@@ -65,11 +65,12 @@ router.route('/users')
                 })
         })
 
-router.route('/users/:userid/quizs/:quizid')
+router.route('/users/:userId/quizs/:quizId')
         .post((req, res) => {
-            const {  } = req.body
+			const { questions } = req.body
+			const { userId, quizId } = req.params
         
-                userData.create(username, email, password, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
+                userData.addQuiz(userId, quizId, questions)
                     .then(user => {
                         res.json({
                             status: 'OK',

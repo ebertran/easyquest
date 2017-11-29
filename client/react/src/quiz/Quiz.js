@@ -17,8 +17,11 @@ class Quiz extends Component {
 
     this.actualItem = {
       question: questions[0].text,
+      questionId: questions[0]._id,
       answer1: questions[0].answers[0].text,
-      answer2: questions[0].answers[1].text
+      answer1Id: questions[0].answers[0]._id,
+      answer2: questions[0].answers[1].text,
+      answer2Id: questions[0].answers[1]._id
     }
   }
 
@@ -71,6 +74,8 @@ class Quiz extends Component {
     }
   }
 
+  handleEndQuiz = 
+
   render() 
 
     if (!this.state.showResults) {
@@ -86,7 +91,10 @@ class Quiz extends Component {
                   classname="btn btn-primary btn-lg"
                   block
                   onClick={this.onAnswerInput}
-                  data={this.actualItem.answer1value}
+                  data={ 
+                      "_id": {this.actualItem.questionId},
+                      "answer": {this.actualItem.answer1Id}
+                  }
                 >
                   {this.actualItem.answer1}
                 </Button>
@@ -94,7 +102,10 @@ class Quiz extends Component {
                   classname="btn btn-primary btn-lg"
                   block
                   onClick={this.onAnswerInput}
-                  data={this.actualItem.answer2value}
+                  data={ 
+                    "_id": {this.actualItem.questionId},
+                    "answer": {this.actualItem.answer2Id}
+                }
                 >
                   {this.actualItem.answer2}
                 </Button>
@@ -121,11 +132,14 @@ class Quiz extends Component {
         <div className="container results">
           <div className="question-block">
             <div className="row">
-            //PUT an object to the array quizs --> {id:id,answers:[]}
-
-              {/* <LinkContainer to="/results">
-								<Button text-center bsStyle="primary" block bsSize="large" data-value={this.state.testResult}><h2>Show me the results!</h2></Button>
-						</LinkContainer> */}
+          
+        
+      <NavLink to="/quiz" activeClassName="active">
+								<Button classname="btn btn-primary btn-lg"
+                  block
+                  onClick={this.handleEndQuiz}
+                  className="btn btn-primary btn-lg text-center"><h2>Submit the text. Thanks for your participation!</h2></Button>
+                </NavLink>
             </div>
           </div>
         </div>
