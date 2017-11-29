@@ -74,7 +74,22 @@ class Quiz extends Component {
     }
   }
 
-  handleEndQuiz = 
+  handleEndQuiz = e => {
+
+    logic
+      .createQuiz({
+        title: this.state.quizPersonal.title,
+        author: this.state.quizPersonal.author,
+        field: this.state.quizPersonal.field,
+        tags: this.state.quizPersonal.tags,
+        description: this.state.quizPersonal.description,
+        version: this.state.quizPersonal.version,
+        questions: _questions
+      }
+      )
+      .then(console.log)
+      .catch(console.error);
+  };
 
   render() 
 
@@ -87,7 +102,7 @@ class Quiz extends Component {
             <hr />
             <div className="row">
               <div className="col-sm-6 col-sm-offset-3">
-                <Button
+                <button
                   classname="btn btn-primary btn-lg"
                   block
                   onClick={this.onAnswerInput}
@@ -97,8 +112,8 @@ class Quiz extends Component {
                   }
                 >
                   {this.actualItem.answer1}
-                </Button>
-                <Button
+                </button>
+                <button
                   classname="btn btn-primary btn-lg"
                   block
                   onClick={this.onAnswerInput}
@@ -108,7 +123,7 @@ class Quiz extends Component {
                 }
                 >
                   {this.actualItem.answer2}
-                </Button>
+                </button>
               </div>
             </div>
           </div>
