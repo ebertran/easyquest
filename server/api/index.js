@@ -65,6 +65,26 @@ router.route('/users')
                 })
         })
 
+router.route('/users/:userid/quizs/:quizid')
+        .post((req, res) => {
+            const {  } = req.body
+        
+                userData.create(username, email, password, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
+                    .then(user => {
+                        res.json({
+                            status: 'OK',
+                            message: 'user created successfully',
+                            data: user
+                        })
+                    })
+                    .catch(err => {
+                        res.json({
+                            status: 'KO',
+                            message: err.message
+                        })
+                    })
+            })
+
 router.route('/users/:id')
     .get((req, res) => {
         const id = req.params.id
