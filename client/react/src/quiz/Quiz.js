@@ -10,7 +10,7 @@ class Quiz extends Component {
       id: "5a04c5ae1d195c4e88dbfca1",
       questions: [],
       currentPosition: 0,
-      results: [],
+      answers: [],
       i: -1,
       showResults: false
     }
@@ -31,34 +31,36 @@ class Quiz extends Component {
       .then(questions => {
         this.setState({ questions: quizs.questions });
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.error(err);
       });
   }
 
-  onAnswerInput = event => {
-    //console.log(this.state)
+  onAnswerInput = answerId => {
+    const data = {
+      _id: this.actualItem.questionId,
+      answer: answerId
+    }
 
     const i = this.state.i + 1;
-    const data = event.target.getAttribute("data")//get index of answer;
 
     if (i < Items.length - 1) {
-      this.setState(function(prevState) {
-        prevState.results.push(data);
+      this.setState(function (prevState) {
+        prevState.answers.push(data);
         prevState.i = i;
 
         return prevState;
       });
     } else if (i === Items.length - 1) {
-      this.setState(function(prevState) {
-        prevState.results.push(data);
+      this.setState(function (prevState) {
+        prevState.answers.push(data);
         prevState.i = i;
 
         return prevState;
       });
 
       setTimeout(() => {
-        this.setState(function(prevState) {
+        this.setState(function (prevState) {
           prevState.showResults = true;
 
           return prevState;
@@ -71,12 +73,12 @@ class Quiz extends Component {
         question: questions[i + 1].text,
         answer1: questions[i + 1].answers[0].text,
         answer2: questions[i + 1].answers[1].text
+      }
     }
-  }
 
-  handleEndQuiz = 
+    handleEndQuiz =
 
-  render() 
+      render()
 
     if (!this.state.showResults) {
       // console.log("show question", this.state.i)
@@ -87,28 +89,20 @@ class Quiz extends Component {
             <hr />
             <div className="row">
               <div className="col-sm-6 col-sm-offset-3">
-                <Button
+                <button
                   classname="btn btn-primary btn-lg"
                   block
-                  onClick={this.onAnswerInput}
-                  data={ 
-                      "_id": {this.actualItem.questionId},
-                      "answer": {this.actualItem.answer1Id}
-                  }
+                  onClick={() => this.onAnswerInput(this.actualItem.answer1Id)}
                 >
                   {this.actualItem.answer1}
-                </Button>
-                <Button
+                </button>
+                <button
                   classname="btn btn-primary btn-lg"
                   block
-                  onClick={this.onAnswerInput}
-                  data={ 
-                    "_id": {this.actualItem.questionId},
-                    "answer": {this.actualItem.answer2Id}
-                }
+                  onClick={() => this.onAnswerInput(this.actualItem.answer2Id)}
                 >
                   {this.actualItem.answer2}
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -124,7 +118,7 @@ class Quiz extends Component {
               {(this.state.i + 1) / Items.length * 100}
             </div>
           </div>
-        </div>
+        </div >
       )
     } else {
       console.log(this.state.testResult);
@@ -132,14 +126,14 @@ class Quiz extends Component {
         <div className="container results">
           <div className="question-block">
             <div className="row">
-          
-        
-      <NavLink to="/quiz" activeClassName="active">
-								<Button classname="btn btn-primary btn-lg"
+
+
+              <NavLink to="/quiz" activeClassName="active">
+                <button classname="btn btn-primary btn-lg"
                   block
                   onClick={this.handleEndQuiz}
-                  className="btn btn-primary btn-lg text-center"><h2>Submit the text. Thanks for your participation!</h2></Button>
-                </NavLink>
+                  className="btn btn-primary btn-lg text-center"><h2>Submit the text. Thanks for your participation!</h2></button>
+              </NavLink>
             </div>
           </div>
         </div>
