@@ -104,10 +104,16 @@ class Logic {
   }
 
   login(username, password) {
-    return this.api.login(username, password).then(({ data }) => {
-      Xtorage.session.setObject("user", data)
+    return new Promise((resolve, reject) => {
+      this.api.login(username, password)
+        .then((result) => {
+          if (!result || result.status === 'KO') throw new Error('login failed')
 
-      return data
+          Xtorage.session.setObject("user", result.data)
+
+          resolve(result.data)
+        })
+        .catch(reject)
     })
   }
 }
