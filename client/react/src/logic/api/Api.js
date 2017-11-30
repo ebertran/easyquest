@@ -7,7 +7,7 @@ class QuizApi {
     }
 
     createQuiz(quiz) {
-        return axios.post(this.quizsEndpoint,quiz).then(({ data }) => data)
+        return axios.post(this.quizsEndpoint, quiz).then(({ data }) => data)
     }
 
     listQuizs() {
@@ -15,15 +15,43 @@ class QuizApi {
     }
 
     addSolvedQuizToUser(userId, quizId, questions) {
-        return axios.post(`${this.usersEndpoint}/${userId}/quizs/${quizId}`,{questions}).then(({ data }) => data)
+        return axios.post(`${this.usersEndpoint}/${userId}/quizs/${quizId}`, { questions }).then(({ data }) => data)
     }
 
     retrieveQuiz(id) {
         return axios.get(this.quizsEndpoint, id).then(({ data }) => data)
     }
 
-    createUser(user) {
-        return axios.post(this.quizsEndpoint,user).then(({ data }) => data)
+    createUser(username,
+        email,
+        password,
+        avatar,
+        color,
+        rex,
+        name,
+        surname,
+        birthdate,
+        sex,
+        zipcode,
+        studies,
+        occupation,
+        organization) {
+        return axios.post(this.usersEndpoint, {
+            username,
+            email,
+            password,
+            avatar,
+            color,
+            rex,
+            name,
+            surname,
+            birthdate,
+            sex,
+            zipcode,
+            studies,
+            occupation,
+            organization
+        }).then(({ data }) => data)
     }
 
     listUsers() {

@@ -12,39 +12,36 @@ class UserData {
     birthdate,
     sex,
     zipcode,
-    studies,
+    education,
     occupation,
     organization
   ) {
     return new Promise((resolve, reject) => {
-      if (!username) throw new Error(`username cannot be ${username}`);
+      if (!username) throw new Error(`username cannot be ${username}`)
 
-      if (!password) throw new Error(`password cannot be ${password}`);
+      if (!password) throw new Error(`password cannot be ${password}`)
 
-      if (!avatar) throw new Error(`avatar cannot be ${avatar}`);
+      if (!avatar) throw new Error(`avatar cannot be ${avatar}`)
 
-      if (!color) throw new Error(`color cannot be ${color}`);
+      if (!color) throw new Error(`color cannot be ${color}`)
 
-      if (typeof rex !== "boolean") throw new Error(`rex cannot be ${rex}`);
+      if (!email) throw new Error(`email cannot be ${email}`)
 
-      if (!email) throw new Error(`email cannot be ${email}`);
+      if (!name) throw new Error(`name cannot be ${name}`)
 
-      if (!name) throw new Error(`name cannot be ${name}`);
+      if (!surname) throw new Error(`surname cannot be ${surname}`)
 
-      if (!surname) throw new Error(`surname cannot be ${surname}`);
+      if (!birthdate) throw new Error(`birthdate cannot be ${birthdate}`)
 
-      if (!birthdate) throw new Error(`birthdate cannot be ${birthdate}`);
+      if (!sex) throw new Error(`sex cannot be ${sex}`)
 
-      if (!sex) throw new Error(`sex cannot be ${sex}`);
+      if (!zipcode) throw new Error(`zipcode cannot be ${zipcode}`)
 
-      if (!zipcode) throw new Error(`zipcode cannot be ${zipcode}`);
+      if (!education) throw new Error(`education cannot be ${education}`)
 
-      if (!occupation) throw new Error(`occupation cannot be ${occupation}`);
+      if (!occupation) throw new Error(`occupation cannot be ${occupation}`)
 
-      if (!organization)
-        throw new Error(`organization cannot be ${organization}`);
-
-      if (!quizs) throw new Error(`quizs cannot be ${quizs}`);
+      if (!organization) throw new Error(`organization cannot be ${organization}`)
 
       const user = new User({
         username,
@@ -57,7 +54,7 @@ class UserData {
         birthdate,
         sex,
         zipcode,
-        studies,
+        education,
         occupation,
         organization
       });
