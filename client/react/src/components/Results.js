@@ -15,7 +15,7 @@ class Results extends Component {
   componentDidMount() {
     const quizId = this.props.match.params.id;
     logic
-      .retrieveQuiz(quizId)
+      .listUsersById(quizId)
       .then(users => {
         this.setState({ users: questions.questions });
       })

@@ -46,11 +46,11 @@ class Logic {
     );
   }
 
-  listQuizsByAuthor(query) {
-    return this.listQuizs().then(quizs =>
-      quizs.filter(quiz => quiz.author === query)
-    );
-  }
+  // listQuizsByAuthor(query) {
+  //   return this.listQuizs().then(quizs =>
+  //     quizs.filter(quiz => quiz.author === query)
+  //   );
+  // }
 
   listUsers() {
     return this.api.listUsers().then(({ data }) => data)
@@ -59,6 +59,14 @@ class Logic {
   retrieveUser() {
     return this.listUsers().then(users => {
       const [user] = users.filter(user => user._id === this.getUser()._id)
+
+      return user;
+    });
+  }
+
+  listUsersByQuizs(id) {
+    return this.listUsers().then(users => {
+      const [user] = users.filter(user => user.quizs._id === id)
 
       return user;
     });
