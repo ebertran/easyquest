@@ -77,7 +77,7 @@ class Quiz extends Component {
   handleEndQuiz = e => {
 
     logic
-      .createQuiz({
+      .addQuiz({
         title: this.state.quizPersonal.title,
         author: this.state.quizPersonal.author,
         field: this.state.quizPersonal.field,

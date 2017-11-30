@@ -4,7 +4,7 @@ import InputForm from "../inputForm/InputFormText";
 import InputFormRadio from "../inputForm/InputFormRadio";
 import InputFormArea from "../inputForm/InputFormArea";
 
-const UserFields = (props) => (
+const UserFields = props => (
   <div>
     <InputForm
       type="text"
@@ -64,6 +64,19 @@ const UserFields = (props) => (
       type="radio"
       id="occupation"
       options={["studying", "working", "unemployed", "retired"]}
+      changeState={props.changeState}
+    />
+    <InputForm
+      type="text"
+      id="organization"
+      placeholder="Enter organization"
+      changeState={props.changeState}
+    />
+
+    <InputForm
+      type="text"
+      id="dino"
+      placeholder="Enter organization"
       changeState={props.changeState}
     />
     <InputForm

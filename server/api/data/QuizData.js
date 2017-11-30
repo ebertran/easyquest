@@ -5,6 +5,9 @@ class QuizData {
         return new Promise((resolve, reject) => {
             if (!user)
                 throw new Error(`user cannot be ${user}`)
+            
+             if (!title)
+                throw new Error(`author cannot be ${author}`)
 
             if (!author)
                 throw new Error(`author cannot be ${author}`)

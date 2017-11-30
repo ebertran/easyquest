@@ -4,11 +4,11 @@ import Logic from "../logic/Logic";
 const logic = new Logic();
 
 class QuizSearch extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      query: "",
+      query: props.match.params.query,
       quizsTitle: [],
       quizsAuthor: []
     };
@@ -38,7 +38,7 @@ class QuizSearch extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-sm-12">
             <section className="panel panel-default">
               <div className="text-center panel-heading  custom-logo">
                 <div className="">
@@ -47,9 +47,31 @@ class QuizSearch extends Component {
               </div>
               <div className="panel-body">
                 <div className="row">
+
+                {this.state.quizsAuthor.map((quizsAuthor, index) => {
+                    return (
+                      <div key={index} className="col-sm-3 user-tests-box">
+                        <h4>{quizsAuthor.title}</h4>
+                        <h5>
+                          Quizer: <a>{quizsAuthor.user}</a>
+                        </h5>
+                        <p>{quizsAuthor.description}</p>
+                        <br />
+                        <button
+                          type="button"
+                          className="btn btn-space btn-primary"
+                          onClick={this.onAnswerInput}
+                          data={this.state.quizsAuthor._id}
+                        >
+                          Do it!
+                        </button>
+                      </div>
+                    );
+                  })}
+
                   {this.state.quizsTitle.map((quizsTitle, index) => {
                     return (
-                      <div key={index} className="col-sm-6 user-tests-box">
+                      <div key={index} className="col-sm-3 user-tests-box">
                         <h4>{quizsTitle.title}</h4>
                         <h5>
                           Quizer: <a>{quizsTitle.user}</a>
@@ -67,11 +89,12 @@ class QuizSearch extends Component {
                       </div>
                     );
                   })}
+
                 </div>
               </div>
             </section>
           </div>
-          <div className="col-sm-6">
+          {/*<div className="col-sm-12">
             <section className="panel panel-default">
               <div className="text-center panel-heading  custom-logo">
                 <div className="">
@@ -103,7 +126,7 @@ class QuizSearch extends Component {
                 </div>
               </div>
             </section>
-          </div>
+          </div> */}
         </div>
       </div>
     );

@@ -27,7 +27,7 @@ class Main extends Component {
           <Route path="/quiz-list" component={QuizList} />
           <Route path="/quiz-form" component={QuizForm} />
           <Route path="/user-form" component={UserForm} />
-          <Route path="/quiz-search" component={QuizSearch} />
+          <Route path="/quiz-search/:query" component={QuizSearch} />
           {/* <Route path="/quiz" component={Quiz} /> */}
           {/* <Route path='/about' component={ About } />
           <Route path='/contact' component={ Contact } /> */}

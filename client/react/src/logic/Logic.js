@@ -43,7 +43,9 @@ class Logic {
 
   listQuizsByTitle(query) {
     return this.listQuizs().then(quizs =>
-      quizs.filter(quiz => quiz.title === query)
+      quizs.filter(quiz => {
+        return quiz.title.split(' ').includes(query) || (quiz.author.toLowerCase()).includes(query.toLowerCase())
+      })
     );
   }
 
