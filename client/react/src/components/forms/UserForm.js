@@ -37,7 +37,7 @@ class UserForm extends Component {
         occupation: "",
         organization: ""
       },
-      userFormFinished: !false
+      userFormFinished: false
     }
   }
 
