@@ -26,6 +26,7 @@ export default class InputFormText extends Component {
             id={this.props.id}
             placeholder={this.props.placeholder}
             onChange={this.handleChange}
+            required
           />
         </div>
       </div>

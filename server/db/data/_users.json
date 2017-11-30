@@ -5,6 +5,8 @@
         },
         "username": "Warki",
         "password": "123",
+        "avatar": "rex",
+        "color": "red",
         "name": "Pepito",
         "surname": "Garcia",
         "birthdate": "1985-07-15T23:32:18Z",

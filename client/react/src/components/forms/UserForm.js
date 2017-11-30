@@ -31,7 +31,8 @@ class UserForm extends Component {
         studies: "",
         occupation: "",
         organization: ""
-      }
+      },
+      userFormFinished: false
     };
   }
 
@@ -61,11 +62,17 @@ class UserForm extends Component {
         occupation: this.state.userData.occupation,
         organization: this.state.userData.organization
       })
-      .then(console.log)
+      .then(
+        this.setState(function(prevState) {
+          prevState.userFormFinished = true;
+
+          return prevState;
+        }))
       .catch(console.error);
   };
 
   render() {
+    if (!this.state.userFormFinished) {
     return (
       <div className="container">
         <div className="row">
@@ -83,13 +90,12 @@ class UserForm extends Component {
                 </nav>
               </div>
               <div className="panel-body">
-                <form className="form-horizontal">
+                <form className="form-horizontal" onSubmit={this.handleClickSubmit}>
                   <UserFields changeState={this.changeState} />
                   <div className="form-group">
                     <div className="col-sm-12 center-block">
                       <button
                         className="buttonFull center-block btn btn-primary"
-                        onClick={this.handleClickSubmit}
                       >
                         Register!
                       </button>
@@ -102,6 +108,27 @@ class UserForm extends Component {
         </div>
       </div>
     );
+  }else{
+
+    return (
+      <div className="container results">
+        <div className="question-block">
+          <div className="row">
+            <h1 className="text-center"> Welcome to this awsome comunity and become a Quezaurus Rex!</h1>
+            <br />
+            <br />
+
+            <button
+              className="btn btn-primary btn-lg text-center center-block"
+              onClick={this.handleEndUserForm}
+            >
+              <h2>Go to your profile page!</h2>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
   }
 }
 

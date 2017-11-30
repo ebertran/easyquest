@@ -29,6 +29,7 @@ export default class InputFormArea extends Component {
             placeholder={this.props.placeholder}
             defaultValue={""}
             onChange={this.handleChange}
+            required
           />
         </div>
       </div>
