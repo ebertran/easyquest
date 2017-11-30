@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 import UserProfile from "./UserProfile";
 
@@ -53,15 +54,20 @@ class QuizList extends Component {
                     {this.state.quizs.map((quiz, index) => {
                       return (
                         <div key={index} className="col-sm-4 user-tests-box">
-                          <h4>{quiz.title}</h4>
+                        
+                        <h4>{quiz.title}</h4>
                           <p>{quiz.description}</p>
                           <br />
+                          <NavLink to={`/results/${quiz._id}`}>
                           <button
                             type="button"
                             className="btn btn-space btn-primary"
                           >
+
                             Results
                           </button>
+                        </NavLink>
+                         
                           <button
                             type="button"
                             className="btn btn-space btn-success"

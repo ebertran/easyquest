@@ -8,12 +8,13 @@ class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      quizId: "5a1e7a7cdac1df143bab6a49",
+      quizId: "",
       questions: [],
       currentPosition: 0,
       answers: [],
       i: -1,
-      showResults: false,
+      submitResults: false,
+      quizFinished: false,
       actualItem: {
         question: "",
         questionId: "",
@@ -26,8 +27,9 @@ class Quiz extends Component {
   }
 
   componentDidMount() {
+    const quizId = this.props.match.params.id
     logic
-      .retrieveQuiz(this.state.quizId)
+      .retrieveQuiz(quizId)
       .then(questions => {
         this.setState({ questions: questions.questions });
       })
@@ -50,7 +52,7 @@ class Quiz extends Component {
   }
 
   onAnswerInput = answerId => {
-    console.log(this.state.actualItem.questionId)
+    console.log(this.state.actualItem.questionId);
     const data = {
       _id: this.state.actualItem.questionId,
       answer: answerId
@@ -75,7 +77,7 @@ class Quiz extends Component {
 
       setTimeout(() => {
         this.setState(function(prevState) {
-          prevState.showResults = true;
+          prevState.submitResults = true;
 
           return prevState;
         });
@@ -95,18 +97,23 @@ class Quiz extends Component {
   };
 
   handleEndQuiz = () => {
-    const userId = logic.getUser()._id
-    const quizId = this.state.quizId
-    const questions = this.state.answers
+    const userId = logic.getUser()._id;
+    const quizId = this.state.quizId;
+    const questions = this.state.answers;
 
     logic
       .addSolvedQuizToUser(userId, quizId, questions)
-      .then(console.log)
+      .then(
+        this.setState(function(prevState) {
+          prevState.quizFinished = true;
+
+          return prevState;
+        }))
       .catch(console.error);
   };
 
   render() {
-    if (!this.state.showResults) {
+    if (!this.state.submitResults) {
       // console.log("show question", this.state.i)
       return (
         <div className="container">
@@ -145,34 +152,53 @@ class Quiz extends Component {
               ).toString()}
               aria-valuemin={"0"}
               aria-valuemax={"100"}
-              style={{ width: ((this.state.i + 1) /this.state.questions.length *100).toString() + "%" }}
+              style={{
+                width:
+                  (
+                    (this.state.i + 1) /
+                    this.state.questions.length *
+                    100
+                  ).toString() + "%"
+              }}
             >
               {/* {(this.state.i + 1) / this.state.questions.length * 100} */}
             </div>
           </div>
         </div>
       );
-    } else {
-      console.log(this.state.testResult);
+    } else if (!this.state.quizFinished) {
       return (
         <div className="container results">
           <div className="question-block">
             <div className="row">
-            <h1 className="text-center"> Thanks for your participation!</h1>
-            <br />
-            <br />
-              
-                <button
-                  className="btn btn-primary btn-lg text-center center-block"
-                  onClick={this.handleEndQuiz}
-                >
-                  <h2>Submit the quiz.</h2>
-                  
-                </button>
+              <button
+                className="btn btn-primary btn-lg text-center center-block"
+                onClick={this.handleEndQuiz}
+              >
+                <h2>Submit the quiz.</h2>
+              </button>
             </div>
           </div>
         </div>
-      )
+      );
+    } else {
+      return (
+        <div className="container results">
+          <div className="question-block">
+            <div className="row">
+              <h1 className="text-center"> Thanks for your participation!</h1>
+              <br />
+              <br />
+
+              <button
+                className="btn btn-primary btn-lg text-center center-block"
+              >
+                <h2>Go to your profile page!</h2>
+              </button>
+            </div>
+          </div>
+        </div>
+      );
     }
   }
 }

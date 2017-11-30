@@ -115,17 +115,6 @@ class QuizForm extends Component {
     });
   };
 
-  handleEndQuiz = () => {
-    const userId = logic.getUser()._id;
-    const quizId = this.state.quizId;
-    const questions = this.state.answers;
-
-    logic
-      .addSolvedQuizToUser(userId, quizId, questions)
-      .then(console.log)
-      .catch(console.error);
-  };
-
   render() {
     if (!this.state.quizFormFinished) {
       return (
@@ -147,7 +136,10 @@ class QuizForm extends Component {
                     </nav>
                   </div>
                   <div className="panel-body">
-                    <form className="form-horizontal" onSubmit={this.handleClickSubmit}>
+                    <form
+                      className="form-horizontal"
+                      onSubmit={this.handleClickSubmit}
+                    >
                       <QuizPersonalData changeState={this.setPersonalInfo} />
                       <hr />
                       <h4 className="text-center">Items</h4>
@@ -161,9 +153,7 @@ class QuizForm extends Component {
                           >
                             Add question
                           </button>
-                          <button
-                            className="buttonFull pull-right btn btn-primary"
-                          >
+                          <button className="buttonFull pull-right btn btn-primary">
                             Create quiz
                           </button>
                         </div>
@@ -190,7 +180,6 @@ class QuizForm extends Component {
 
               <button
                 className="btn btn-primary btn-lg text-center center-block"
-                onClick={this.handleEndQuizForm}
               >
                 <h2>Go to your profile page!</h2>
               </button>

@@ -8,6 +8,7 @@ import QuizSearch from "./components/QuizSearch";
 import Quiz from "./components/Quiz";
 import QuizForm from "./components/forms/QuizForm";
 import UserForm from "./components/forms/UserForm";
+// import Results from "./components/results";
 
 class Main extends Component {
   constructor() {
@@ -28,7 +29,8 @@ class Main extends Component {
           <Route path="/quiz-form" component={QuizForm} />
           <Route path="/user-form" component={UserForm} />
           <Route path="/quiz-search/:query" component={QuizSearch} />
-          <Route path="/quiz" component={Quiz} />
+          <Route path="/quiz/:id" component={Quiz} />
+          {/* <Route path="/results/:quizId" component={Results} /> */}
           {/* <Route path='/about' component={ About } />
           <Route path='/contact' component={ Contact } /> */}
         </Switch>

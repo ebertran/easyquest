@@ -120,7 +120,6 @@ class UserForm extends Component {
 
             <button
               className="btn btn-primary btn-lg text-center center-block"
-              onClick={this.handleEndUserForm}
             >
               <h2>Go to your profile page!</h2>
             </button>
