@@ -1,19 +1,24 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from "react"
+import axios from "axios"
 
-import UserFields from "./fields/UserFields";
-import InputForm from "./inputForm/InputFormText";
-import InputFormRadio from "./inputForm/InputFormRadio";
-import InputFormArea from "./inputForm/InputFormArea";
-import { arch } from "os";
+import UserFields from "./fields/UserFields"
+import InputForm from "./inputForm/InputFormText"
+import InputFormRadio from "./inputForm/InputFormRadio"
+import InputFormArea from "./inputForm/InputFormArea"
+import { arch } from "os"
 
-import Logic from "../../logic/Logic";
-const logic = new Logic();
+import Logic from "../../logic/Logic"
+
+const {
+  withRouter
+} = require('react-router-dom')
+
+const logic = new Logic()
 
 
 class UserForm extends Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       userData: {
@@ -32,8 +37,8 @@ class UserForm extends Component {
         occupation: "",
         organization: ""
       },
-      userFormFinished: false
-    };
+      userFormFinished: !false
+    }
   }
 
   changeState = (index, key, value) => {
@@ -41,8 +46,8 @@ class UserForm extends Component {
 
     this.setState(prevState => {
       return { userData: { ...prevState.userData, ...newData } }
-    });
-  };
+    })
+  }
 
   handleClickSubmit = e => {
     e.preventDefault()
@@ -73,8 +78,12 @@ class UserForm extends Component {
       })
       .catch(err => {
         console.error(err)
-      });
-  };
+      })
+  }
+
+  goToProfile = () => {
+    this.props.history.push('/quiz-list')
+  }
 
   render() {
     if (!this.state.userFormFinished) {
@@ -112,7 +121,7 @@ class UserForm extends Component {
             </div>
           </div>
         </div>
-      );
+      )
     } else {
 
       return (
@@ -125,16 +134,16 @@ class UserForm extends Component {
 
               <button
                 className="btn btn-primary btn-lg text-center center-block"
-                onClick={this.handleEndUserForm}
+                onClick={this.goToProfile}
               >
                 <h2>Go to your profile page!</h2>
               </button>
             </div>
           </div>
         </div>
-      );
+      )
     }
   }
 }
 
-export default UserForm;
+export default withRouter(UserForm)
