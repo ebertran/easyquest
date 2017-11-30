@@ -67,10 +67,10 @@ router.route('/users')
 
 router.route('/users/:userId/quizs/:quizId')
         .post((req, res) => {
-			const { questions } = req.body
-			const { userId, quizId } = req.params
+            const { userId, quizId } = req.params
+            const { questions } = req.body
         
-                userData.addQuiz(userId, quizId, questions)
+                userData.addSolvedQuiz(userId, quizId, questions)
                     .then(user => {
                         res.json({
                             status: 'OK',

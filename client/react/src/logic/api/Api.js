@@ -14,8 +14,8 @@ class QuizApi {
         return axios.get(this.quizsEndpoint).then(({ data }) => data)
     }
 
-    addSolvedQuizToUser(userId, quizId, answers) {
-        return axios.post(`${this.usersEndpoint}/${userId}/quizs/${quizId}`,answers).then(({ data }) => data)
+    addSolvedQuizToUser(userId, quizId, questions) {
+        return axios.post(`${this.usersEndpoint}/${userId}/quizs/${quizId}`,{questions}).then(({ data }) => data)
     }
 
     retrieveQuiz(id) {

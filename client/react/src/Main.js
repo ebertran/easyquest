@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
 import QuizList from "./components/QuizList";
 import QuizSearch from "./components/QuizSearch";
-import Quiz from "./quiz/Quiz";
+import Quiz from "./components/Quiz";
 import QuizForm from "./components/forms/QuizForm";
 import UserForm from "./components/forms/UserForm";
 

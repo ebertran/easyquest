@@ -2,7 +2,7 @@ import Xtorage from "../utils/Xtorage";
 
 class Logic {
   constructor() {
-    Xtorage.session.setObject("user", { _id: "5a04c5ae1d195c4e88dbfcaa" });
+    Xtorage.session.setObject("user", { _id: "5a04c5ae1d195c4e88dbfcab" });
 
     this.api = new (require("./api/Api"))("http://localhost:3001/api");
     // this.quizApi = new(require('./api/QuizApi'))('https://desolate-bastion-53155.herokuapp.com/api')
@@ -69,8 +69,8 @@ class Logic {
     });
   }
 
-  addSolvedQuizToUser(userId, quizId, answers) {
-    return this.api.addSolvedQuizToUser(userId, quizId, answers).then(({ data }) => data);
+  addSolvedQuizToUser(userId, quizId, questions) {
+    return this.api.addSolvedQuizToUser(userId, quizId, questions).then(({ data }) => data);
   }
 }
 

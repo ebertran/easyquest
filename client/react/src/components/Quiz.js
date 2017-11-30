@@ -8,7 +8,7 @@ class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      quizId: "5a1e9c8ebf5dd9069fb29b31",
+      quizId: "5a1e7a7cdac1df143bab6a49",
       questions: [],
       currentPosition: 0,
       answers: [],
@@ -97,12 +97,12 @@ class Quiz extends Component {
   };
 
   handleEndQuiz = () => {
-    const userId = logic.getUser()
+    const userId = logic.getUser()._id
     const quizId = this.state.quizId
-    const answers = this.state.answers
+    const questions = this.state.answers
 
     logic
-      .addSolvedQuizToUser(userId, quizId, answers)
+      .addSolvedQuizToUser(userId, quizId, questions)
       .then(console.log)
       .catch(console.error);
   };
