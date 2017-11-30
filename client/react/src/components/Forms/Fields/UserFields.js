@@ -75,14 +75,14 @@ const UserFields = props => (
 
     <InputForm
       type="text"
-      id="dino"
+      id="avatar"
       placeholder="Enter organization"
       changeState={props.changeState}
     />
     <InputForm
       type="text"
-      id="organization"
-      placeholder="Enter organization"
+      id="color"
+      placeholder=""
       changeState={props.changeState}
     />
   </div>

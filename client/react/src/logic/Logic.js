@@ -29,8 +29,7 @@ class Logic {
 
   retrieveQuiz(quizId) {
     return this.listQuizs().then(quizs => {
-      const [quiz] = quizs.filter(quiz => quiz._id === quizId);
-
+      const [quiz] = quizs.filter(quiz => quiz._id === quizId)
       return quiz;
     });
   }
@@ -70,8 +69,8 @@ class Logic {
     });
   }
 
-  addQuiz(userId, quizId, questions) {
-    return this.api.addQuiz().then(({ data }) => data);
+  addSolvedQuizToUser(userId, quizId, questions) {
+    return this.api.addSolvedQuizToUser().then(({ data }) => data);
   }
 }
 

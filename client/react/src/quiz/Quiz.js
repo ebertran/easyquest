@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 import Logic from "../logic/Logic";
 const logic = new Logic();
@@ -7,51 +8,67 @@ class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      id: "5a04c5ae1d195c4e88dbfca1",
+      quizId: "5a1e9c8ebf5dd9069fb29b31",
       questions: [],
       currentPosition: 0,
-      results: [],
+      answers: [],
       i: -1,
-      showResults: false
-    }
-
-    this.actualItem = {
-      question: questions[0].text,
-      questionId: questions[0]._id,
-      answer1: questions[0].answers[0].text,
-      answer1Id: questions[0].answers[0]._id,
-      answer2: questions[0].answers[1].text,
-      answer2Id: questions[0].answers[1]._id
-    }
+      showResults: false,
+      actualItem: {
+        question: "",
+        questionId: "",
+        answer1: "",
+        answer1Id: "",
+        answer2: "",
+        answer2Id: ""
+      }
+    };
   }
 
   componentDidMount() {
+    //const quizs = logic.retrieveQuiz(this.state.quizId);
+
     logic
-      .retrieveQuiz(this.state.id)
+      .retrieveQuiz(this.state.quizId)
       .then(questions => {
-        this.setState({ questions: quizs.questions });
+        this.setState({ questions: questions.questions });
       })
+      .then(() => {
+        this.setState(prevState => ({
+          actualItem: {
+            question: prevState.questions[0].text,
+            questionId: prevState.questions[0]._id,
+            answer1: prevState.questions[0].answers[0].text,
+            answer1Id: prevState.questions[0].answers[0]._id,
+            answer2: prevState.questions[0].answers[1].text,
+            answer2Id: prevState.questions[0].answers[1]._id
+          }
+        }));
+      })
+      .then(() => console.log(this.state))
       .catch(function(err) {
         console.error(err);
       });
   }
 
-  onAnswerInput = event => {
-    //console.log(this.state)
+  onAnswerInput = answerId => {
+    const data = {
+      _id: this.state.actualItem.questionId,
+      answer: answerId
+    };
 
     const i = this.state.i + 1;
-    const data = event.target.getAttribute("data")//get index of answer;
 
-    if (i < Items.length - 1) {
+    if (i < this.state.questions.length - 1) {
       this.setState(function(prevState) {
-        prevState.results.push(data);
+        prevState.answers.push(data);
         prevState.i = i;
 
         return prevState;
       });
-    } else if (i === Items.length - 1) {
+    } else if (i === this.state.questions.length - 1) {
       this.setState(function(prevState) {
-        prevState.results.push(data);
+        prevState.answers.push(data);
         prevState.i = i;
 
         return prevState;
@@ -66,95 +83,92 @@ class Quiz extends Component {
       }, 800);
     }
 
-    if (i < Items.length - 1) {
-      this.actualItem = {
-        question: questions[i + 1].text,
-        answer1: questions[i + 1].answers[0].text,
-        answer2: questions[i + 1].answers[1].text
+    if (i < this.state.questions.length - 1) {
+      this.state.actualItem = {
+        question: this.state.questions[i + 1].text,
+        answer1: this.state.questions[i + 1].answers[0].text,
+        answer1Id: this.state.questions[i + 1].answers[0]._id,
+        answer2: this.state.questions[i + 1].answers[1].text,
+        answer2Id: this.state.questions[i + 1].answers[1]._id
+      };
     }
-  }
+  };
 
-  handleEndQuiz = e => {
+  handleEndQuiz = () => {
+    const userId = logic.getUser()
+    const quizId = this.state.quizId
+    const answers = this.state.answers
 
     logic
-      .addQuiz({
-        title: this.state.quizPersonal.title,
-        author: this.state.quizPersonal.author,
-        field: this.state.quizPersonal.field,
-        tags: this.state.quizPersonal.tags,
-        description: this.state.quizPersonal.description,
-        version: this.state.quizPersonal.version,
-        questions: _questions
-      }
-      )
+      .addSolvedQuizToUser(userId, quizId, answers)
       .then(console.log)
       .catch(console.error);
   };
 
-  render() 
-
+  render() {
     if (!this.state.showResults) {
       // console.log("show question", this.state.i)
       return (
         <div className="container">
           <div className="question-block">
-            <p className="lead">{this.actualItem.question}</p>
+            <p className="lead">{this.state.actualItem.question}</p>
             <hr />
             <div className="row">
               <div className="col-sm-6 col-sm-offset-3">
                 <button
-                  classname="btn btn-primary btn-lg"
-                  block
-                  onClick={this.onAnswerInput}
-                  data={ 
-                      "_id": {this.actualItem.questionId},
-                      "answer": {this.actualItem.answer1Id}
+                  className="btn btn-primary btn-lg btn-block"
+                  onClick={() =>
+                    this.onAnswerInput(this.state.actualItem.answer1Id)
                   }
                 >
-                  {this.actualItem.answer1}
+                  {this.state.actualItem.answer1}
                 </button>
                 <button
-                  classname="btn btn-primary btn-lg"
-                  block
-                  onClick={this.onAnswerInput}
-                  data={ 
-                    "_id": {this.actualItem.questionId},
-                    "answer": {this.actualItem.answer2Id}
-                }
+                  className="btn btn-primary btn-lg btn-block"
+                  onClick={() =>
+                    this.onAnswerInput(this.state.actualItem.answer2Id)
+                  }
                 >
-                  {this.actualItem.answer2}
+                  {this.state.actualItem.answer2}
                 </button>
               </div>
             </div>
           </div>
-          <div class="progress">
+          <div className="progress">
             <div
-              class="center progress-bar-striped active"
-              role="progressbar"
-              aria-valuenow={(this.state.i + 1) / Items.length * 100}
-              aria-valuemin="0"
-              aria-valuemax="100"
-              style="width:70%"
+              className="progress-bar"
+              role={"progressbar"}
+              aria-valuenow={(
+                (this.state.i + 1) /
+                this.state.questions.length *
+                100
+              ).toString()}
+              aria-valuemin={"0"}
+              aria-valuemax={"100"}
+              style={{ width: ((this.state.i + 1) /this.state.questions.length *100).toString() + "%" }}
             >
-              {(this.state.i + 1) / Items.length * 100}
+              {/* {(this.state.i + 1) / this.state.questions.length * 100} */}
             </div>
           </div>
         </div>
-      )
+      );
     } else {
       console.log(this.state.testResult);
       return (
         <div className="container results">
           <div className="question-block">
             <div className="row">
-          
-        
-      <NavLink to="/quiz" activeClassName="active">
-								<Button classname="btn btn-primary btn-lg"
-                  block
+            <h1 className="text-center"> Thanks for your participation!</h1>
+            <br />
+            <br />
+              
+                <button
+                  className="btn btn-primary btn-lg text-center center-block"
                   onClick={this.handleEndQuiz}
-                  className="btn btn-primary btn-lg text-center"><h2>Submit the text. Thanks for your participation!</h2></Button>
-                </NavLink>
+                >
+                  <h2>Submit the text.</h2>
+                  
+                </button>
             </div>
           </div>
         </div>
