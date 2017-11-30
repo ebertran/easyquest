@@ -22,6 +22,10 @@ class QuizApi {
         return axios.get(this.quizsEndpoint, id).then(({ data }) => data)
     }
 
+    createUser(user) {
+        return axios.post(this.quizsEndpoint,user).then(({ data }) => data)
+    }
+
     listUsers() {
         return axios.get(this.usersEndpoint).then(({ data }) => data)
     }

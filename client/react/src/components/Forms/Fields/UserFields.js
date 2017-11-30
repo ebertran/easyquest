@@ -1,42 +1,43 @@
 import React, { Component } from "react";
 
-import InputForm from "../inputForm/InputFormText";
+import InputFormText from "../inputForm/InputFormText";
 import InputFormRadio from "../inputForm/InputFormRadio";
 import InputFormArea from "../inputForm/InputFormArea";
+import InputFormImage from "../inputForm/InputFormImage";
 
 const UserFields = props => (
   <div>
-    <InputForm
+    <InputFormText
       type="text"
       id="username"
       placeholder="Enter username"
       changeState={props.changeState}
     />
-    <InputForm
+    <InputFormText
       type="email"
       id="email"
       placeholder="Enter email"
       changeState={props.changeState}
     />
-    <InputForm
+    <InputFormText
       type="password"
       id="password"
       placeholder="Enter password"
       changeState={props.changeState}
     />
-    <InputForm
+    <InputFormText
       type="text"
       id="name"
       placeholder="Enter name"
       changeState={props.changeState}
     />
-    <InputForm
+    <InputFormText
       type="text"
       id="surename"
       placeholder="Enter surename"
       changeState={props.changeState}
     />
-    <InputForm
+    <InputFormText
       type="date"
       id="birthdate"
       placeholder="Enter birthdate"
@@ -48,7 +49,7 @@ const UserFields = props => (
       options={["female", "male", "trans", "other"]}
       changeState={props.changeState}
     />
-    <InputForm
+    <InputFormText
       type="text"
       id="zipcode"
       placeholder="Enter zipcode"
@@ -66,23 +67,23 @@ const UserFields = props => (
       options={["studying", "working", "unemployed", "retired"]}
       changeState={props.changeState}
     />
-    <InputForm
+    <InputFormText
       type="text"
       id="organization"
       placeholder="Enter organization"
       changeState={props.changeState}
     />
 
-    <InputForm
-      type="text"
+    <InputFormImage
+      type="radio"
       id="avatar"
-      placeholder="Enter organization"
+      options={["rex", "anquilo", "trice", "para", "brachi"]}
       changeState={props.changeState}
     />
-    <InputForm
-      type="text"
+    <InputFormImage
+      type="radio"
       id="color"
-      placeholder=""
+      options={["studying", "working", "unemployed", "retired"]}
       changeState={props.changeState}
     />
   </div>

@@ -34,7 +34,7 @@ class Header extends Component {
             <span className="icon-bar" />
           </button>
         </div>
-        <div id="navbar3">
+        <div id="navbar3" className="navbar-collapse collapse">
           <ul className="nav navbar-nav">
             <li>
               <NavLink to="/" exact activeClassName="active">

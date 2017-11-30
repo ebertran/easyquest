@@ -4,6 +4,8 @@ class UserData {
   create(
     username,
     password,
+    avatar,
+    color,
     email,
     name,
     surname,
@@ -20,6 +22,8 @@ class UserData {
       if (!password) throw new Error(`password cannot be ${password}`);
 
       if (!avatar) throw new Error(`avatar cannot be ${avatar}`);
+
+      if (!color) throw new Error(`color cannot be ${color}`);
 
       if (typeof rex !== "boolean") throw new Error(`rex cannot be ${rex}`);
 
@@ -45,6 +49,8 @@ class UserData {
       const user = new User({
         username,
         password,
+        avatar,
+        color,
         email,
         name,
         surname,

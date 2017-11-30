@@ -52,6 +52,7 @@ class Quiz extends Component {
   }
 
   onAnswerInput = answerId => {
+    console.log(this.state.actualItem.questionId)
     const data = {
       _id: this.state.actualItem.questionId,
       answer: answerId
@@ -86,6 +87,7 @@ class Quiz extends Component {
     if (i < this.state.questions.length - 1) {
       this.state.actualItem = {
         question: this.state.questions[i + 1].text,
+        questionId: this.state.questions[i + 1]._id,
         answer1: this.state.questions[i + 1].answers[0].text,
         answer1Id: this.state.questions[i + 1].answers[0]._id,
         answer2: this.state.questions[i + 1].answers[1].text,
@@ -166,7 +168,7 @@ class Quiz extends Component {
                   className="btn btn-primary btn-lg text-center center-block"
                   onClick={this.handleEndQuiz}
                 >
-                  <h2>Submit the text.</h2>
+                  <h2>Submit the quiz.</h2>
                   
                 </button>
             </div>

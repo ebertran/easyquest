@@ -5,13 +5,33 @@ import UserFields from "./fields/UserFields";
 import InputForm from "./inputForm/InputFormText";
 import InputFormRadio from "./inputForm/InputFormRadio";
 import InputFormArea from "./inputForm/InputFormArea";
+import { arch } from "os";
+
+import Logic from "../../logic/Logic";
+const logic = new Logic();
+
 
 class UserForm extends Component {
   constructor() {
     super();
 
     this.state = {
-      userData: {}
+      userData: {
+        username: "",
+        email: "",
+        password: "",
+        avatar: "",
+        color: "",
+        rex: "",
+        name: "",
+        surname: "",
+        birthdate: "",
+        sex: "",
+        zipcode: "",
+        studies: "",
+        occupation: "",
+        organization: ""
+      }
     };
   }
 
@@ -24,11 +44,25 @@ class UserForm extends Component {
 
   handleClickSubmit = e => {
     e.preventDefault();
-    this.setState(function(prevState) {
-      return {
-        // TODO Post the state to create quiz
-      };
-    });
+    logic
+      .createUser({
+        username: this.state.userData.username,
+        email: this.state.userData.email,
+        password: this.state.userData.password,
+        avatar: this.state.userData.avatar,
+        color: this.state.userData.color,
+        rex: this.state.userData.rex,
+        name: this.state.userData.name,
+        surname: this.state.userData.surname,
+        birthdate: this.state.userData.birthdate,
+        sex: this.state.userData.sex,
+        zipcode: this.state.userData.zipcode,
+        studies: this.state.userData.studies,
+        occupation: this.state.userData.occupation,
+        organization: this.state.userData.organization
+      })
+      .then(console.log)
+      .catch(console.error);
   };
 
   render() {

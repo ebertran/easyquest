@@ -5,10 +5,8 @@ const UserSchema = new Schema({
   username: String,
   email: String,
   password: String,
-  avatar: {
-    dino: String,
-    color: String
-  },
+  dino: String,
+  color: String,
   rex: Boolean,
   name: String,
   surname: String,

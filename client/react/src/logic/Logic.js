@@ -43,7 +43,7 @@ class Logic {
   listQuizsByTitle(query) {
     return this.listQuizs().then(quizs =>
       quizs.filter(quiz => {
-        return quiz.title.split(' ').includes(query) || (quiz.author.toLowerCase()).includes(query.toLowerCase())
+        return (quiz.author.toLowerCase()).includes(query.toLowerCase()) || (quiz.title.split(' ').includes(query)) 
       })
     );
   }
@@ -69,8 +69,8 @@ class Logic {
     });
   }
 
-  addSolvedQuizToUser(userId, quizId, questions) {
-    return this.api.addSolvedQuizToUser().then(({ data }) => data);
+  addSolvedQuizToUser(userId, quizId, answers) {
+    return this.api.addSolvedQuizToUser(userId, quizId, answers).then(({ data }) => data);
   }
 }
 
