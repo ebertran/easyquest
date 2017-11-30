@@ -6,8 +6,8 @@ import UserProfile from "./components/UserProfile";
 import QuizList from "./components/QuizList";
 import QuizSearch from "./components/QuizSearch";
 import Quiz from "./quiz/Quiz";
-import QuizForm from "./components/Forms/QuizForm";
-import UserForm from "./components/Forms/UserForm";
+import QuizForm from "./components/forms/QuizForm";
+import UserForm from "./components/forms/UserForm";
 
 class Main extends Component {
   constructor() {
