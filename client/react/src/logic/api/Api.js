@@ -29,6 +29,10 @@ class QuizApi {
     listUsers() {
         return axios.get(this.usersEndpoint).then(({ data }) => data)
     }
+
+    login(username, password) {
+        return axios.post(this.usersEndpoint + '/login', { username, password }).then(({ data }) => data)
+    }
 }
 
 module.exports = QuizApi

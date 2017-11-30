@@ -13,6 +13,7 @@ const router = express.Router()
 
 const userData = new(require('./data/UserData.js'))
 const quizData = new(require('./data/QuizData.js'))
+const userLogic = new (require('./logic/UserLogic'))
 
 router.route('/users')
     .get((req, res) => {
@@ -64,6 +65,26 @@ router.route('/users')
                     })
                 })
         })
+
+router.route('/users/login')
+    .post((req, res) => {
+        const { username, password } = req.body
+
+        userLogic.login(username, password)
+            .then(user => {
+                res.json({
+                    status: 'OK',
+                    message: 'user created successfully',
+                    data: user
+                })
+            })
+            .catch(err => {
+                res.json({
+                    status: 'KO',
+                    message: err.message
+                })
+            })
+    })
 
 router.route('/users/:userId/quizs/:quizId')
         .post((req, res) => {

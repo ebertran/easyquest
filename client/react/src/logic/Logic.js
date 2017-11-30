@@ -2,29 +2,27 @@ import Xtorage from "../utils/Xtorage";
 
 class Logic {
   constructor() {
-    Xtorage.session.setObject("user", { _id: "5a04c5ae1d195c4e88dbfcab" });
-
-    this.api = new (require("./api/Api"))("http://localhost:3001/api");
+    this.api = new (require("./api/Api"))("http://localhost:3001/api")
     // this.quizApi = new(require('./api/QuizApi'))('https://desolate-bastion-53155.herokuapp.com/api')
   }
 
   getUser() {
-    return Xtorage.session.getObject("user");
+    return Xtorage.session.getObject("user")
   }
 
-  addQuiz(userId, quizId, questions) {}
+  addQuiz(userId, quizId, questions) { }
 
   createQuiz(quiz) {
     quiz.user = this.getUser()._id;
-    return this.api.createQuiz(quiz).then(({ data }) => data);
+    return this.api.createQuiz(quiz).then(({ data }) => data)
   }
 
   createUser() {
-    return this.api.createUser().then(({ data }) => data);
+    return this.api.createUser().then(({ data }) => data)
   }
 
   listQuizs() {
-    return this.api.listQuizs().then(({ data }) => data);
+    return this.api.listQuizs().then(({ data }) => data)
   }
 
   retrieveQuiz(quizId) {
@@ -43,7 +41,7 @@ class Logic {
   listQuizsByTitle(query) {
     return this.listQuizs().then(quizs =>
       quizs.filter(quiz => {
-        return (quiz.author.toLowerCase()).includes(query.toLowerCase()) || (quiz.title.split(' ').includes(query)) 
+        return (quiz.author.toLowerCase()).includes(query.toLowerCase()) || (quiz.title.split(' ').includes(query))
       })
     );
   }
@@ -54,23 +52,28 @@ class Logic {
     );
   }
 
-  // const list = this.state.users
-  // .filter(d => this.state.input === '' || d.includes(this.state.input))
-
   listUsers() {
-    return this.api.listUsers().then(({ data }) => data);
+    return this.api.listUsers().then(({ data }) => data)
   }
 
   retrieveUser() {
     return this.listUsers().then(users => {
-      const [user] = users.filter(user => user._id === this.getUser()._id);
+      const [user] = users.filter(user => user._id === this.getUser()._id)
 
       return user;
     });
   }
 
   addSolvedQuizToUser(userId, quizId, questions) {
-    return this.api.addSolvedQuizToUser(userId, quizId, questions).then(({ data }) => data);
+    return this.api.addSolvedQuizToUser(userId, quizId, questions).then(({ data }) => data)
+  }
+
+  login(username, password) {
+    return this.api.login(username, password).then(({ data }) => {
+      Xtorage.session.setObject("user", data)
+
+      return data
+    })
   }
 }
 

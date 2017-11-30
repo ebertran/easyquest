@@ -26,8 +26,6 @@ class Quiz extends Component {
   }
 
   componentDidMount() {
-    //const quizs = logic.retrieveQuiz(this.state.quizId);
-
     logic
       .retrieveQuiz(this.state.quizId)
       .then(questions => {

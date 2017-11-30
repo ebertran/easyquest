@@ -87,6 +87,19 @@ class UserData {
     });
   }
 
+  retrieveByUsername(username) {
+    return new Promise((resolve, reject) => {
+      if (!username) throw new Error(`username cannot be ${username}`)
+
+      User.findOne({ username })
+        .then(user => {
+          if (!user) throw new Error(`user not found ${username}`)
+          else resolve(user)
+        })
+        .catch(reject);
+    })
+  }
+
   addSolvedQuiz(userId, quizId, questions) {
     return new Promise((resolve, reject) => {
       if (!userId) throw new Error(`userId cannot be ${userId}`);
@@ -94,13 +107,15 @@ class UserData {
       if (!questions) throw new Error(`questions cannot be ${questions}`);
 
       return User.findByIdAndUpdate(userId, {
-        $push: { quizs:
-          {
-            _id: quizId,
-            questions
-          }
-      }})
-      .then(() => {
+        $push: {
+          quizs:
+            {
+              _id: quizId,
+              questions
+            }
+        }
+      })
+        .then(() => {
           return this.retrieve(userId)
         })
         .then(resolve)
