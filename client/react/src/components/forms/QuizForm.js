@@ -21,7 +21,8 @@ class QuizForm extends Component {
         <QuizQuestion index={0} key={uuidv4()} changeState={this.addQuestion} />
       ],
       questions: [],
-      quizPersonal: {}
+      quizPersonal: {},
+      quizFormFinished: false
     };
   }
 
@@ -62,30 +63,30 @@ class QuizForm extends Component {
   };
 
   handleClickSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
 
     const _questions = this.state.questions.map(question => {
-      const _question = {}
+      const _question = {};
 
-      _question.text = question.question
+      _question.text = question.question;
 
-      _question.answers = []
+      _question.answers = [];
 
-      const _answer1 = {}
-      _answer1.text = question.answer1
-      _answer1.dimension = question.dimension1
-      _answer1.value = question.value1
+      const _answer1 = {};
+      _answer1.text = question.answer1;
+      _answer1.dimension = question.dimension1;
+      _answer1.value = question.value1;
 
-      const _answer2 = {}
-      _answer2.text = question.answer2
-      _answer2.dimension = question.dimension2
-      _answer2.value = question.value2
+      const _answer2 = {};
+      _answer2.text = question.answer2;
+      _answer2.dimension = question.dimension2;
+      _answer2.value = question.value2;
 
-      _question.answers.push(_answer1)
-      _question.answers.push(_answer2)
+      _question.answers.push(_answer1);
+      _question.answers.push(_answer2);
 
-      return _question
-    })
+      return _question;
+    });
 
     logic
       .createQuiz({
@@ -96,9 +97,14 @@ class QuizForm extends Component {
         description: this.state.quizPersonal.description,
         version: this.state.quizPersonal.version,
         questions: _questions
-      }
+      })
+      .then(
+        this.setState(function(prevState) {
+          prevState.quizFormFinished = true;
+
+          return prevState;
+        })
       )
-      .then(console.log)
       .catch(console.error);
   };
 
@@ -109,56 +115,90 @@ class QuizForm extends Component {
     });
   };
 
+  handleEndQuiz = () => {
+    const userId = logic.getUser()._id;
+    const quizId = this.state.quizId;
+    const questions = this.state.answers;
+
+    logic
+      .addSolvedQuizToUser(userId, quizId, questions)
+      .then(console.log)
+      .catch(console.error);
+  };
+
   render() {
-    return (
-      <div>
-        <div className="container">
-          <div className="row">
-            <UserProfile />
-            <div className="col-sm-10">
-              <section className="panel panel-reverse">
-                <div>
-                  <nav className="panel-heading navbar navbar-default navbar-center">
-                    <ul className="nav navbar-nav">
-                      <li>
-                        <a href="#">
-                          <h4>Create you quiz!</h4>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div className="panel-body">
-                  <form className="form-horizontal">
-                    <QuizPersonalData changeState={this.setPersonalInfo} />
-                    <hr />
-                    <h4 className="text-center">Items</h4>
-                    <br />
-                    {this.state.newQuizs}
-                    <div className="form-group">
-                      <div className="col-sm-12">
-                        <button
-                          className="buttonFull pull-left btn btn-success"
-                          onClick={this.handleClickAddQuestion}
-                        >
-                          Add question
-                        </button>
-                        <button
-                          className="buttonFull pull-right btn btn-primary"
-                          onClick={this.handleClickSubmit}
-                        >
-                          Create quiz
-                        </button>
+    if (!this.state.quizFormFinished) {
+      return (
+        <div>
+          <div className="container">
+            <div className="row">
+              <UserProfile />
+              <div className="col-sm-10">
+                <section className="panel panel-reverse">
+                  <div>
+                    <nav className="panel-heading navbar navbar-default navbar-center">
+                      <ul className="nav navbar-nav">
+                        <li>
+                          <a href="#">
+                            <h4>Create you quiz!</h4>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div className="panel-body">
+                    <form className="form-horizontal" onSubmit={this.handleClickSubmit}>
+                      <QuizPersonalData changeState={this.setPersonalInfo} />
+                      <hr />
+                      <h4 className="text-center">Items</h4>
+                      <br />
+                      {this.state.newQuizs}
+                      <div className="form-group">
+                        <div className="col-sm-12">
+                          <button
+                            className="buttonFull pull-left btn btn-success"
+                            onClick={this.handleClickAddQuestion}
+                          >
+                            Add question
+                          </button>
+                          <button
+                            className="buttonFull pull-right btn btn-primary"
+                          >
+                            Create quiz
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </form>
-                </div>
-              </section>
+                    </form>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="container results">
+          <div className="question-block">
+            <div className="row">
+              <h1 className="text-center">
+                {" "}
+                Your quiz is complete, congratulations!
+              </h1>
+              <br />
+              <br />
+
+              <button
+                className="btn btn-primary btn-lg text-center center-block"
+                onClick={this.handleEndQuizForm}
+              >
+                <h2>Go to your profile page!</h2>
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
