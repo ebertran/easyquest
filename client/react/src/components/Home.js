@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import Logic from '../logic/Logic'
 
+const {
+  withRouter
+} = require('react-router-dom')
+
 const logic = new Logic()
 
 class Home extends Component {
@@ -30,7 +34,11 @@ class Home extends Component {
     event.preventDefault()
 
     logic.login(this.state.username, this.state.password)
-      .then(console.log)
+      .then(data => {
+        if(data){
+          this.props.history.push('/quiz-list/')
+        }
+      })
       .catch(console.error)
   }
 
@@ -99,4 +107,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);
