@@ -13,7 +13,7 @@ const UserSchema = new Schema({
   birthdate: Date,
   sex: String,
   zipcode: String,
-  studies: String,
+  education: String,
   occupation: String,
   organization: String,
   quizs: [

@@ -33,7 +33,7 @@ const UserFields = props => (
     />
     <InputFormText
       type="text"
-      id="surename"
+      id="surname"
       placeholder="Enter surename"
       changeState={props.changeState}
     />

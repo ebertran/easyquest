@@ -74,7 +74,7 @@ router.route('/users/login')
             .then(user => {
                 res.json({
                     status: 'OK',
-                    message: 'user created successfully',
+                    message: 'user logged in successfully',
                     data: user
                 })
             })
@@ -95,7 +95,7 @@ router.route('/users/:userId/quizs/:quizId')
                     .then(user => {
                         res.json({
                             status: 'OK',
-                            message: 'user created successfully',
+                            message: 'user solved quiz added successfully',
                             data: user
                         })
                     })

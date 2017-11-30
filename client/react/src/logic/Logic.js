@@ -17,8 +17,35 @@ class Logic {
     return this.api.createQuiz(quiz).then(({ data }) => data)
   }
 
-  createUser() {
-    return this.api.createUser().then(({ data }) => data)
+  createUser(username,
+    email,
+    password,
+    avatar,
+    color,
+    rex,
+    name,
+    surname,
+    birthdate,
+    sex,
+    zipcode,
+    studies,
+    occupation,
+    organization
+  ) {
+    return this.api.createUser(username,
+      email,
+      password,
+      avatar,
+      color,
+      rex,
+      name,
+      surname,
+      birthdate,
+      sex,
+      zipcode,
+      studies,
+      occupation,
+      organization).then(({ data }) => data)
   }
 
   listQuizs() {
