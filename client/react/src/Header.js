@@ -47,12 +47,12 @@ class Header extends Component {
               </NavLink>
             </li>
             <li className="navbar-li">
-              <NavLink to="/quiz-list" activeClassName="active">
+              <NavLink to="/" activeClassName="active">
                   
               </NavLink>
             </li>
             <li className="navbar-li">
-              <NavLink to="/quiz-list" activeClassName="active">
+              <NavLink to="/new-quizs" activeClassName="active">
                 New quizs
               </NavLink>
             </li>

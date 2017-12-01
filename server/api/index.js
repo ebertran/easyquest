@@ -48,9 +48,9 @@ router.route('/users')
         }
     })
     .post((req, res) => {
-        const { username, password, avatar,color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization} = req.body
-    
-            userData.create(username, password, avatar,color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
+        const { username, password, avatar, color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization} = req.body
+        console.log(req.body)
+            userData.create(username, password, avatar, color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
                 .then(user => {
                     res.json({
                         status: 'OK',

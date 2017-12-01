@@ -77,7 +77,7 @@ const UserFields = props => (
     <InputFormImage
       type="radio"
       id="avatar"
-      options={["brachisaurus", "anquilosaurus", "triceratops", "tyranosaurus", "parasaurolophus"]}
+      options={["brachisaurus", "anquilosaurus", "triceratops", "rex", "parasaurolophus"]}
       changeState={props.changeState}
     />
     <InputFormImage

@@ -83,9 +83,9 @@ class Logic {
     return this.api.listUsers().then(({ data }) => data)
   }
 
-  retrieveUser() {
+  retrieveUser(id) {
     return this.listUsers().then(users => {
-      const [user] = users.filter(user => user._id === this.getUser()._id)
+      const [user] = users.filter(user => user._id === id)
 
       return user;
     });

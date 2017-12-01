@@ -6,6 +6,7 @@ import UserProfile from "./components/UserProfile";
 import QuizList from "./components/QuizList";
 import QuizSearch from "./components/QuizSearch";
 import Quiz from "./components/Quiz";
+import NewQuizs from "./components/NewQuizs";
 import QuizForm from "./components/forms/QuizForm";
 import UserForm from "./components/forms/UserForm";
 // import Results from "./components/results";
@@ -27,6 +28,7 @@ class Main extends Component {
           <Route path="/user-profile" component={UserProfile} />
           <Route path="/quiz-list" component={QuizList} />
           <Route path="/quiz-form" component={QuizForm} />
+          <Route path="/new-quizs" component={NewQuizs} />
           <Route path="/user-form" component={UserForm} />
           <Route path="/quiz-search/:query" component={QuizSearch} />
           <Route path="/quiz/:id" component={Quiz} />
