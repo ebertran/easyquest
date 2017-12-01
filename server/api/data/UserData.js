@@ -1,4 +1,4 @@
-const User = require("./model/UserModel");
+const User = require("./model/UserModel")
 
 class UserData {
   create(
@@ -57,31 +57,49 @@ class UserData {
         education,
         occupation,
         organization
-      });
+      })
 
       user
         .save()
         .then(resolve)
-        .catch(reject);
-    });
+        .catch(reject)
+    })
   }
 
   searchUsers(query) {
-    return User.filter(user => user.username.includes(query));
+    return User.filter(user => user.username.includes(query))
   }
 
   list() {
-    return User.find();
+    return User.find()
+  }
+
+  listByQuiz(quizId) {
+    return this.list()
+      .then(users => {
+        if (!users || users.length === 0) return users
+
+        const found = users.filter(user => {
+          if (user.quizs)
+            for (let i = 0; i < user.quizs.length; i++) {
+              if (user.quizs[i].id === quizId) return true
+            }
+    
+          return false
+        })
+
+        return found
+      })
   }
 
   retrieve(id) {
     return new Promise((resolve, reject) => {
-      if (!id) throw new Error(`id cannot be ${id}`);
+      if (!id) throw new Error(`id cannot be ${id}`)
 
       User.findById(id)
         .then(resolve)
-        .catch(reject);
-    });
+        .catch(reject)
+    })
   }
 
   retrieveByUsername(username) {
@@ -93,15 +111,15 @@ class UserData {
           if (!user) throw new Error(`user not found ${username}`)
           else resolve(user)
         })
-        .catch(reject);
+        .catch(reject)
     })
   }
 
   addSolvedQuiz(userId, quizId, questions) {
     return new Promise((resolve, reject) => {
-      if (!userId) throw new Error(`userId cannot be ${userId}`);
-      if (!quizId) throw new Error(`quizId cannot be ${quizId}`);
-      if (!questions) throw new Error(`questions cannot be ${questions}`);
+      if (!userId) throw new Error(`userId cannot be ${userId}`)
+      if (!quizId) throw new Error(`quizId cannot be ${quizId}`)
+      if (!questions) throw new Error(`questions cannot be ${questions}`)
 
       return User.findByIdAndUpdate(userId, {
         $push: {
