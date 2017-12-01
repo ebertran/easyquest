@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import UserProfile from "./UserProfile";
 
@@ -33,41 +33,48 @@ class QuizList extends Component {
           <div>
             <UserProfile />
             <div className="col-sm-10">
-              <section className="text-center panel panel-default">
-                <div className="text-left panel-heading  custom-logo">
-                  <div className="">
-                    <h2>
-                      Your tests
-                      <a href="#">
-                        <button
-                          type="button"
-                          className="btn btn-primary pull-right"
-                        >
-                          Create a new test!
-                        </button>
-                      </a>
-                    </h2>
-                  </div>
+              <section className="panel panel-reverse">
+                <div>
+                  <nav className="panel-heading navbar navbar-default navbar-center">
+                    <ul className="nav navbar-nav">
+                      <li>
+                        <a href="#">
+                          
+                        </a>
+                      </li>
+                    </ul>
+                    <Link to="/quiz-form">
+                      <button
+                        type="button"
+                        className="btn btn-lg btn-primary pull-right"
+                      >
+                        Create a new test!
+                      </button>
+                    </Link>
+                  </nav>
                 </div>
+
                 <div className="panel-body">
+                <div className="container">
                   <div className="row">
+                  
                     {this.state.quizs.map((quiz, index) => {
                       return (
-                        <div key={index} className="col-sm-4 user-tests-box">
                         
-                        <h4>{quiz.title}</h4>
+                        <div key={index} className="col-sm-3 user-tests-box">
+                          <h3>{quiz.title}</h3>
                           <p>{quiz.description}</p>
                           <br />
+                          <br />
                           <NavLink to={`/results/${quiz._id}`}>
-                          <button
-                            type="button"
-                            className="btn btn-space btn-primary"
-                          >
+                            <button
+                              type="button"
+                              className="btn btn-space btn-primary"
+                            >
+                              Results
+                            </button>
+                          </NavLink>
 
-                            Results
-                          </button>
-                        </NavLink>
-                         
                           <button
                             type="button"
                             className="btn btn-space btn-success"
@@ -81,9 +88,11 @@ class QuizList extends Component {
                             Delete
                           </button>
                         </div>
+                        
                       );
                     })}
                   </div>
+                </div>
                 </div>
               </section>
             </div>

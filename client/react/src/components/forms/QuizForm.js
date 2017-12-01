@@ -129,7 +129,7 @@ class QuizForm extends Component {
                       <ul className="nav navbar-nav">
                         <li>
                           <a href="#">
-                            <h4>Create you quiz!</h4>
+                            <h4>Create a new quiz!</h4>
                           </a>
                         </li>
                       </ul>

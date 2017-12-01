@@ -10,6 +10,10 @@ li{
     list-style-type: none;
 }
 
+Link{
+    text-decoration: none,
+}
+
 p {
     display: inline;
 }
@@ -26,15 +30,37 @@ p {
     background-size: cover;
     } */
 
-
 .mini-logo {
-    width: 200px;
-    height: 200px;
+    width: 20px;
+    height: 20px;
+}
+.register-text {
+    color: white;
+}
+.login {
+    background-color: #DF681C;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    padding: 20px;
+}
+
+.register {
+    background-color: #DF681C;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    padding: 7px;
+}
+
+
+.navbar-li {
+    font-size: 20px;
 }
 
 .logo {
-    width: 40%;
-    height: 40%;
+    width: 65%;
+    height: 65%;
 }
 
 .separator {

@@ -21,7 +21,7 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-default">
         <div className="navbar-header">
-          <a className="navbar-brand">Quezaurus</a>
+        
           <button
             type="button"
             className="navbar-toggle collapsed"
@@ -36,42 +36,41 @@ class Header extends Component {
         </div>
         <div id="navbar3" className="navbar-collapse collapse">
           <ul className="nav navbar-nav">
-            <li>
+          <li>
               <NavLink to="/" exact activeClassName="active">
-                Home
+              <img className="mini-logo" src="../images/mini-logo-white.svg" alt="#" />
               </NavLink>
             </li>
-            <li>
+            <li className="navbar-li">
+              <NavLink to="/" exact activeClassName="active">
+              Quezaurus
+              </NavLink>
+            </li>
+            <li className="navbar-li">
               <NavLink to="/quiz-list" activeClassName="active">
-                Your quizs
+                  
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/quiz-search" activeClassName="active">
-                Search quizs
+            <li className="navbar-li">
+              <NavLink to="/quiz-list" activeClassName="active">
+                New quizs
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/quiz-form" activeClassName="active">
-                Create new quiz
+            <li className="navbar-li">
+              <NavLink to="/quiz-list" activeClassName="active">
+                Profile
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/user-form" activeClassName="active">
-                Register Now!
+            <li className="navbar-li">
+              <NavLink to="/quiz-list" activeClassName="active">
+                About us
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/quiz" activeClassName="active">
-                Quiz
+            <li className="navbar-li">
+              <NavLink to="/quiz-list" activeClassName="active">
+                Contact
               </NavLink>
             </li>
-            {/* <li>
-            <NavLink to="/about" activeClassName="active">About us</NavLink>
-            </li>
-            <li>
-            <NavLink to="/contact" activeClassName="active">Contact</NavLink>
-            </li> */}
           </ul>
 
           <form className="navbar-form navbar-right">
