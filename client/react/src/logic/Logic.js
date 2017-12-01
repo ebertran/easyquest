@@ -83,9 +83,9 @@ class Logic {
     return this.api.listUsers().then(({ data }) => data)
   }
 
-  retrieveUser(id) {
+  retrieveUser() {
     return this.listUsers().then(users => {
-      const [user] = users.filter(user => user._id === id)
+      const [user] = users.filter(user => user._id === this.getUser()._id)
 
       return user;
     });
@@ -100,6 +100,7 @@ class Logic {
   }
 
   addSolvedQuizToUser(userId, quizId, questions) {
+    console.log(quizId, 'ffffff')
     return this.api.addSolvedQuizToUser(userId, quizId, questions).then(({ data }) => data)
   }
 

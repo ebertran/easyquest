@@ -26,4 +26,4 @@ class Results extends Component {
   }
 }
 
-export default Quiz;
+export default Results;

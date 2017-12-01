@@ -17,7 +17,7 @@ class UserProfile extends Component {
     logic
       .retrieveUser()
       .then(user => {
-        console.log(user.avatar)
+        console.log(user)
         this.setState({ user });
       })
       .catch(function(err) {
@@ -27,7 +27,7 @@ class UserProfile extends Component {
 
   render() {
     return (
-      
+
           <div className="col-sm-2 profile">
             <div className="avatar" style={{'background-color': `${this.state.user.color}`}}>
               <img className="dino" src={`../images/${this.state.user.avatar}.svg`} alt="#" />

@@ -70,6 +70,10 @@ p {
     /* background-color: #D26E33; */
 }
 
+.user-results {
+    display: inline;
+}
+
 .avatar {
     width: 150px;
     height: 150px;
