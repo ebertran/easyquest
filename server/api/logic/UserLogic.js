@@ -14,6 +14,10 @@ class UserLogic {
                 .catch(reject)
         })
     }
+
+    listByQuiz(quizId) {
+        return userData.listByQuiz(quizId)
+    }
 }
 
 module.exports = UserLogic

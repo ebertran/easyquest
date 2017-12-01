@@ -11,8 +11,8 @@ app.use(bodyParser.json())
 
 const router = express.Router()
 
-const userData = new(require('./data/UserData.js'))
-const quizData = new(require('./data/QuizData.js'))
+const userData = new (require('./data/UserData.js'))
+const quizData = new (require('./data/QuizData.js'))
 const userLogic = new (require('./logic/UserLogic'))
 
 router.route('/users')
@@ -31,11 +31,50 @@ router.route('/users')
             })
         } else {
 
-        userData.list()
+            userData.list()
+                .then(users => {
+                    res.json({
+                        status: 'OK',
+                        message: 'users listed successfully',
+                        data: users
+                    })
+                })
+                .catch(err => {
+                    res.json({
+                        status: 'KO',
+                        message: err.message
+                    })
+                })
+        }
+    })
+    .post((req, res) => {
+        const { username, password, avatar, color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization } = req.body
+        console.log(req.body)
+        userData.create(username, password, avatar, color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
+            .then(user => {
+                res.json({
+                    status: 'OK',
+                    message: 'user created successfully',
+                    data: user
+                })
+            })
+            .catch(err => {
+                res.json({
+                    status: 'KO',
+                    message: err.message
+                })
+            })
+    })
+
+router.route('/users/quizs/:id')
+    .get((req, res) => {
+        const id = req.params.id
+
+        userData.listByQuiz(id)
             .then(users => {
                 res.json({
                     status: 'OK',
-                    message: 'users listed successfully',
+                    message: 'users listed by quiz successfully',
                     data: users
                 })
             })
@@ -45,26 +84,7 @@ router.route('/users')
                     message: err.message
                 })
             })
-        }
     })
-    .post((req, res) => {
-        const { username, password, avatar, color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization} = req.body
-        console.log(req.body)
-            userData.create(username, password, avatar, color, email, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
-                .then(user => {
-                    res.json({
-                        status: 'OK',
-                        message: 'user created successfully',
-                        data: user
-                    })
-                })
-                .catch(err => {
-                    res.json({
-                        status: 'KO',
-                        message: err.message
-                    })
-                })
-        })
 
 router.route('/users/login')
     .post((req, res) => {
@@ -87,25 +107,25 @@ router.route('/users/login')
     })
 
 router.route('/users/:userId/quizs/:quizId')
-        .post((req, res) => {
-            const { userId, quizId } = req.params
-            const { questions } = req.body
-        
-                userData.addSolvedQuiz(userId, quizId, questions)
-                    .then(user => {
-                        res.json({
-                            status: 'OK',
-                            message: 'user solved quiz added successfully',
-                            data: user
-                        })
-                    })
-                    .catch(err => {
-                        res.json({
-                            status: 'KO',
-                            message: err.message
-                        })
-                    })
+    .post((req, res) => {
+        const { userId, quizId } = req.params
+        const { questions } = req.body
+
+        userData.addSolvedQuiz(userId, quizId, questions)
+            .then(user => {
+                res.json({
+                    status: 'OK',
+                    message: 'user solved quiz added successfully',
+                    data: user
+                })
             })
+            .catch(err => {
+                res.json({
+                    status: 'KO',
+                    message: err.message
+                })
+            })
+    })
 
 router.route('/users/:id')
     .get((req, res) => {
@@ -126,7 +146,7 @@ router.route('/users/:id')
                 })
             })
     })
-    
+
 router.route('/quizs')
     .get((req, res) => {
         quizData.list()
@@ -182,7 +202,7 @@ router.route('/quizs/:id')
                 })
             })
     })
-    
+
 
 app.use('/api', router)
 
