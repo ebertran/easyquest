@@ -58,6 +58,10 @@ class QuizApi {
         return axios.get(this.usersEndpoint).then(({ data }) => data)
     }
 
+    listUsersByQuiz(id){
+        return axios.get(`${this.usersEndpoint}/quizs/${id}`).then(({ data }) => data)
+    }
+
     login(username, password) {
         return axios.post(this.usersEndpoint + '/login', { username, password }).then(({ data }) => data)
     }

@@ -52,6 +52,29 @@ class Logic {
     return this.api.listQuizs().then(({ data }) => data)
   }
 
+  
+  listUsersByQuiz(id) {
+    return this.api.listUsersByQuiz(id)
+      .then(({ data }) => data)
+      .then(users => {
+        const promises = []
+
+        users.forEach(user => {
+           user.quizs.forEach(quiz => {
+             if (quiz._id === id) {
+               promises.push(this.retrieveQuiz(id)
+                  .then(_quiz => {
+                    quiz.info = _quiz
+                  }))
+             }
+           })
+        })
+
+        return Promise.all(promises)
+          .then(() => users) 
+      })
+  }
+
   retrieveQuiz(quizId) {
     return this.listQuizs().then(quizs => {
       const [quiz] = quizs.filter(quiz => quiz._id === quizId)
@@ -73,12 +96,6 @@ class Logic {
     );
   }
 
-  // listQuizsByAuthor(query) {
-  //   return this.listQuizs().then(quizs =>
-  //     quizs.filter(quiz => quiz.author === query)
-  //   );
-  // }
-
   listUsers() {
     return this.api.listUsers().then(({ data }) => data)
   }
@@ -86,14 +103,6 @@ class Logic {
   retrieveUser() {
     return this.listUsers().then(users => {
       const [user] = users.filter(user => user._id === this.getUser()._id)
-
-      return user;
-    });
-  }
-
-  listUsersByQuizs(id) {
-    return this.listUsers().then(users => {
-      const [user] = users.filter(user => user.quizs._id === id)
 
       return user;
     });
