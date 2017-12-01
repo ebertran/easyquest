@@ -36,39 +36,19 @@ class Header extends Component {
         </div>
         <div id="navbar3" className="navbar-collapse collapse">
           <ul className="nav navbar-nav">
-          <li>
+          <li className="navbar-li">
               <NavLink to="/" exact activeClassName="active">
-              <img className="mini-logo" src="../images/mini-logo-white.svg" alt="#" />
-              </NavLink>
-            </li>
-            <li className="navbar-li">
-              <NavLink to="/" exact activeClassName="active">
-              Quezaurus
-              </NavLink>
-            </li>
-            <li className="navbar-li">
-              <NavLink to="/" activeClassName="active">
-                  
+              <img className="mini-logo" src="../images/mini-logo-white.svg" alt="#" /> Quezaurus
               </NavLink>
             </li>
             <li className="navbar-li">
               <NavLink to="/new-quizs" activeClassName="active">
-                New quizs
+                Lattests quizs
               </NavLink>
             </li>
             <li className="navbar-li">
               <NavLink to="/quiz-list" activeClassName="active">
                 Profile
-              </NavLink>
-            </li>
-            <li className="navbar-li">
-              <NavLink to="/quiz-list" activeClassName="active">
-                About us
-              </NavLink>
-            </li>
-            <li className="navbar-li">
-              <NavLink to="/quiz-list" activeClassName="active">
-                Contact
               </NavLink>
             </li>
           </ul>
