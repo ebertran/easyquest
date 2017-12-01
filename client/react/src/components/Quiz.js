@@ -31,21 +31,19 @@ class Quiz extends Component {
     logic
       .retrieveQuiz(quizId)
       .then(questions => {
-        this.setState({ questions: questions.questions });
-      })
-      .then(() => {
         this.setState(prevState => ({
+          quizId,
+          questions: questions.questions,
           actualItem: {
-            question: prevState.questions[0].text,
-            questionId: prevState.questions[0]._id,
-            answer1: prevState.questions[0].answers[0].text,
-            answer1Id: prevState.questions[0].answers[0]._id,
-            answer2: prevState.questions[0].answers[1].text,
-            answer2Id: prevState.questions[0].answers[1]._id
+            question: questions.questions[0].text,
+            questionId: questions.questions[0]._id,
+            answer1: questions.questions[0].answers[0].text,
+            answer1Id: questions.questions[0].answers[0]._id,
+            answer2: questions.questions[0].answers[1].text,
+            answer2Id: questions.questions[0].answers[1]._id
           }
-        }));
+        }))
       })
-      .then(() => console.log(this.state))
       .catch(function(err) {
         console.error(err);
       });
