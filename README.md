@@ -2,15 +2,13 @@
 [![nodejs](https://mtzfactory.github.io/logos/png-2/nodejs.png)](https://nodejs.org/)
 [![express](https://mtzfactory.github.io/logos/png-2/express.png)](http://expressjs.com///)
 [![pug](https://mtzfactory.github.io/logos/png-2/pug.png)](https://pugjs.org/)
-[![sass](https://mtzfactory.github.io/logos/png-2/sass.png)](http://sass-lang.com/)
 [![html-5](https://mtzfactory.github.io/logos/png-2/html-5.png)](https://www.w3.org/)
 [![css-3](https://mtzfactory.github.io/logos/png-2/css-3.png)](https://www.w3.org/)
 [![ecmascript 6](https://mtzfactory.github.io/logos/png-2/javascript.png)](https://www.w3.org/)
 [![MongoDB](https://mtzfactory.github.io/logos/png-2/mongodb.png)](https://www.mongodb.com/)
 [![Bootstrap](https://mtzfactory.github.io/logos/png-2/bootstrap.png)](http://getbootstrap.com/)
-[![npm](https://github.com/Iggy-Codes/logo-images/blob/master/logos/npm.png)](https://www.npmjs.com/)
 [![React](https://mtzfactory.github.io/logos/png-2/react.png)](https://reactjs.org/)
-
+<img src="https://github.com/Iggy-Codes/logo-images/blob/master/logos/npm.png"  alt="npm" href="https://www.npmjs.com/" width="86" height="36" />
 
 # [Quezaurus](http://fast-refuge-98306.herokuapp.com/#/)
 
