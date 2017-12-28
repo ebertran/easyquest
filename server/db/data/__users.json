@@ -1,0 +1,31 @@
+[
+    {
+        "_id": {
+            "$oid": "5a04c5ae1d195c4e88dbfcab"
+        },
+        "username": "Warki",
+        "password": "123",
+        "avatar": "rex",
+        "color": "red",
+        "name": "Pepito",
+        "surname": "Garcia",
+        "birthdate": "1985-07-15T23:32:18Z",
+        "sex": "male",
+        "zipcode": "08960",
+        "studies": "Superior",
+        "ocupation": [
+            {
+                "type": "working",
+                "name": "Developer"
+            }
+        ],
+        "organization": [
+            {
+                "type": "company",
+                "name": "Pulse Clown"
+            }
+        ],
+        "quizs": [
+        ]
+    }
+]
