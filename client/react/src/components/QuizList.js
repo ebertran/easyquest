@@ -26,8 +26,6 @@ class QuizList extends Component {
       });
   }
 
-  if (this.state.user)
-
   render() {
     return (
       <div className="container">

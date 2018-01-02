@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Logic from "../logic/Logic";
+import Logic from "./logic/Logic";
 const logic = new Logic();
 
 class Header extends Component {
@@ -63,9 +63,26 @@ class Header extends Component {
               </NavLink>
             </li>
             <li className="navbar-li">
-              <NavLink to="/quiz-list" activeClassName="active">
-                Profile
-              </NavLink>
+              { logic.isLoggedIn()? 
+                  <NavLink to="/quiz-list" activeClassName="active">
+                    Profile
+                  </NavLink>
+                  :
+                  <NavLink to="/register" activeClassName="active">
+                    Register
+                  </NavLink>
+              }
+            </li>
+            <li className="navbar-li">
+              { logic.isLoggedIn()? 
+                  <NavLink to="/logout" activeClassName="active">
+                    Logout
+                  </NavLink>
+                :
+                  <NavLink to="/login" activeClassName="active">
+                    Login
+                  </NavLink>
+              }
             </li>
           </ul>
 
