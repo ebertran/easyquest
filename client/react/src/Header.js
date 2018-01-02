@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Logic from "../logic/Logic";
-const logic = new Logic();
+// import Logic from "../logic/Logic";
+// const logic = new Logic();
 
 class Header extends Component {
   constructor() {
@@ -15,17 +15,17 @@ class Header extends Component {
     };
   }
 
-  componentDidMount() {
-    logic
-      .retrieveUser()
-      .then(user => {
-        console.log(user)
-        this.setState({ user });
-      })
-      .catch(function(err) {
-        console.error(err);
-      });
-  }
+  // componentDidMount() {
+  //   logic
+  //     .retrieveUser()
+  //     .then(user => {
+  //       console.log(user)
+  //       this.setState({ user });
+  //     })
+  //     .catch(function(err) {
+  //       console.error(err);
+  //     });
+  // }
 
   handleChange = e => {
     this.setState({

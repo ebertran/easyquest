@@ -11,7 +11,8 @@ class QuizList extends Component {
     super();
 
     this.state = {
-      quizs: []
+      quizs: [],
+      logged: false
     };
   }
 
@@ -26,82 +27,88 @@ class QuizList extends Component {
       });
   }
 
-  if (this.state.user)
+  isLoggedIn() {
+    
+    
+  }
 
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div>
-            <UserProfile />
-            <div className="col-sm-10">
-              <section className="panel panel-reverse">
-                <div>
-                  <nav className="panel-heading navbar navbar-default navbar-center">
-                    <ul className="nav navbar-nav">
-                      <li>
-                        <a href="#">
+  if (this.state.logged) {
+
+    render() {
+      return (
+        <div className="container">
+          <div className="row">
+            <div>
+              <UserProfile />
+              <div className="col-sm-10">
+                <section className="panel panel-reverse">
+                  <div>
+                    <nav className="panel-heading navbar navbar-default navbar-center">
+                      <ul className="nav navbar-nav">
+                        <li>
+                          <a href="#">
+                            
+                          </a>
+                        </li>
+                      </ul>
+                      <Link to="/quiz-form">
+                        <button
+                          type="button"
+                          className="btn btn-lg btn-primary pull-right"
+                        >
+                          Create a new test!
+                        </button>
+                      </Link>
+                    </nav>
+                  </div>
+
+                  <div className="panel-body">
+                  <div className="container">
+                    <div className="row">
+                    
+                      {this.state.quizs.map((quiz, index) => {
+                        return (
                           
-                        </a>
-                      </li>
-                    </ul>
-                    <Link to="/quiz-form">
-                      <button
-                        type="button"
-                        className="btn btn-lg btn-primary pull-right"
-                      >
-                        Create a new test!
-                      </button>
-                    </Link>
-                  </nav>
-                </div>
+                          <div key={index} className="col-sm-3 user-tests-box">
+                            <h3>{quiz.title}</h3>
+                            <p>{quiz.description}</p>
+                            <br />
+                            <br />
+                            <NavLink to={`/results/${quiz._id}`}>
+                              <button
+                                type="button"
+                                className="btn btn-space btn-primary"
+                              >
+                                Results
+                              </button>
+                            </NavLink>
 
-                <div className="panel-body">
-                <div className="container">
-                  <div className="row">
-                  
-                    {this.state.quizs.map((quiz, index) => {
-                      return (
-                        
-                        <div key={index} className="col-sm-3 user-tests-box">
-                          <h3>{quiz.title}</h3>
-                          <p>{quiz.description}</p>
-                          <br />
-                          <br />
-                          <NavLink to={`/results/${quiz._id}`}>
                             <button
                               type="button"
-                              className="btn btn-space btn-primary"
+                              className="btn btn-space btn-success"
                             >
-                              Results
+                              Edit
                             </button>
-                          </NavLink>
-
-                          <button
-                            type="button"
-                            className="btn btn-space btn-success"
-                          >
-                            Edit
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-space btn-danger"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                        
-                      );
-                    })}
+                            <button
+                              type="button"
+                              className="btn btn-space btn-danger"
+                            >
+                              Delete
+                            </button>
+                          </div>
+                          
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-                </div>
-              </section>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
