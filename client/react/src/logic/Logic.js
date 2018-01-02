@@ -1,17 +1,24 @@
-import Xtorage from "../utils/Xtorage";
+import Xtorage from '../utils/Xtorage';
 
 class Logic {
   constructor() {
-    this.api = new(require("./api/Api"))("http://localhost:3001/api")
+    this.api = new(require('./api/Api'))('http://localhost:3001/api')
     // this.quizApi = new(require('./api/QuizApi'))('https://desolate-bastion-53155.herokuapp.com/api')
   }
 
   // user's
 
   getUser() {
-    return Xtorage.session.getObject("user")
+    return Xtorage.local.getObject('user')
   }
 
+  isLoggedIn() {
+    return !! this.getUser()
+  }
+
+  logout() {
+    Xtorage.local.setObject('user', undefined)
+  }
 
   createUser(username, email, password, avatar, color, rex, name, surname, birthdate, sex, zipcode, studies, occupation, organization) {
     return this.api.createUser(username, email, password, avatar, color, rex, name, surname, birthdate, sex, zipcode, studies, occupation, organization)
@@ -65,7 +72,7 @@ class Logic {
         .then((result) => {
           if (!result || result.status === 'KO') throw new Error('login failed')
 
-          Xtorage.session.setObject("user", result.data)
+          Xtorage.local.setObject('user', result.data)
 
           resolve(result.data)
         })
@@ -96,12 +103,12 @@ class Logic {
       const [quiz] = quizs.filter(quiz => quiz._id === quizId)
       return quiz;
     });
+  }
 
-    listQuizs() {
-      return this.api.listQuizs().then(({
-        data
-      }) => data)
-    }
+  listQuizs() {
+    return this.api.listQuizs().then(({
+      data
+    }) => data)
   }
 
   listQuizsByUser() {
