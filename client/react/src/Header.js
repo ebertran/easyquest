@@ -2,13 +2,29 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import Logic from "../logic/Logic";
+const logic = new Logic();
+
 class Header extends Component {
   constructor() {
     super();
 
     this.state = {
-      query: ""
+      query: "",
+      user: {}
     };
+  }
+
+  componentDidMount() {
+    logic
+      .retrieveUser()
+      .then(user => {
+        console.log(user)
+        this.setState({ user });
+      })
+      .catch(function(err) {
+        console.error(err);
+      });
   }
 
   handleChange = e => {
@@ -69,6 +85,7 @@ class Header extends Component {
               </button>
             </Link>
           </form>
+
         </div>
       </nav>
     );

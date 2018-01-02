@@ -1,7 +1,6 @@
 [![Skylab-coders](https://mtzfactory.github.io/logos/png/skylab-coders.png)](http://www.skylabcoders.com/)
 [![nodejs](https://mtzfactory.github.io/logos/png-2/nodejs.png)](https://nodejs.org/)
 [![express](https://mtzfactory.github.io/logos/png-2/express.png)](http://expressjs.com///)
-[![pug](https://mtzfactory.github.io/logos/png-2/pug.png)](https://pugjs.org/)
 [![html-5](https://mtzfactory.github.io/logos/png-2/html-5.png)](https://www.w3.org/)
 [![css-3](https://mtzfactory.github.io/logos/png-2/css-3.png)](https://www.w3.org/)
 [![ecmascript 6](https://mtzfactory.github.io/logos/png-2/javascript.png)](https://www.w3.org/)
@@ -28,7 +27,7 @@
 ---
 ## Description
 
-Quezaurus is a quiz creator app where users can create their own questionnaires and post them online. Users also can respond questionnaries created by others. You just need to register, pick an avatasaurus and start creating and answering quizs!
+Quezaurus is a quiz creator app where users can create their own questionnaires and post them online. Users also can respond questionnaries created by others. You just need to register, pick an Avatasaurus and start creating and answering quizs!
 
 ---
 
