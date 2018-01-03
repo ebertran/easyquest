@@ -19,12 +19,21 @@ class Xtorage {
 		this.storage.setItem(key, value)
 	}
 
+	remove(key) {
+		this.storage.removeItem(key)
+	}
+
 	getObject(key) {
-		return JSON.parse(this.get(key))
+		const value = this.get(key)
+		return value? JSON.parse(value) : value
 	}
 
 	setObject(key, obj) {
 		this.set(key, JSON.stringify(obj))
+	}
+
+	removeObject(key) {
+		this.remove(key)
 	}
 
 	static session = new Xtorage(sessionStorage)

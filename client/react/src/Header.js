@@ -21,6 +21,11 @@ class Header extends Component {
     });
   };
 
+  logout = event => {
+    logic
+      .logout()
+  };
+
   render() {
     return (
       <nav className="navbar navbar-default">
@@ -56,14 +61,16 @@ class Header extends Component {
                     Profile
                   </NavLink>
                   :
-                  <NavLink to="/register" activeClassName="active">
+                  <NavLink to="/user-form" activeClassName="active">
                     Register
                   </NavLink>
               }
             </li>
             <li className="navbar-li">
               { logic.isLoggedIn()? 
-                  <NavLink to="/logout" activeClassName="active">
+                  <NavLink to="/" 
+                  onClick={this.logout}
+                  activeClassName="active">
                     Logout
                   </NavLink>
                 :

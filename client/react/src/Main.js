@@ -9,6 +9,7 @@ import Quiz from "./components/Quiz";
 import NewQuizs from "./components/NewQuizs";
 import QuizForm from "./components/forms/QuizForm";
 import UserForm from "./components/forms/UserForm";
+import Login from "./components/Login";
 import Results from "./components/Results";
 
 class Main extends Component {
@@ -29,6 +30,7 @@ class Main extends Component {
           <Route path="/quiz-list" component={QuizList} />
           <Route path="/quiz-form" component={QuizForm} />
           <Route path="/new-quizs" component={NewQuizs} />
+          <Route path="/login" component={Login} />
           <Route path="/user-form" component={UserForm} />
           <Route path="/quiz-search/:query" component={QuizSearch} />
           <Route path="/quiz/:id" component={Quiz} />

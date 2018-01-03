@@ -27,19 +27,42 @@ class QuizList extends Component {
       });
   }
 
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div>
-            <UserProfile />
-            <div className="col-sm-10">
-              <section className="panel panel-reverse">
-                <div>
-                  <nav className="panel-heading navbar navbar-default navbar-center">
-                    <ul className="nav navbar-nav">
-                      <li>
-                        <a href="#">
+
+
+    render() {
+      return (
+        <div className="container">
+          <div className="row">
+            <div>
+              <UserProfile />
+              <div className="col-sm-10">
+                <section className="panel panel-reverse">
+                  <div>
+                    <nav className="panel-heading navbar navbar-default navbar-center">
+                      <ul className="nav navbar-nav">
+                        <li>
+                          <a href="#">
+                            
+                          </a>
+                        </li>
+                      </ul>
+                      <Link to="/quiz-form">
+                        <button
+                          type="button"
+                          className="btn btn-lg btn-primary pull-right"
+                        >
+                          Create a new test!
+                        </button>
+                      </Link>
+                    </nav>
+                  </div>
+
+                  <div className="panel-body">
+                  <div className="container">
+                    <div className="row">
+                    
+                      {this.state.quizs.map((quiz, index) => {
+                        return (
                           
                           <div key={index} className="col-sm-3 user-tests-box">
                             <h3>{quiz.title}</h3>
@@ -82,6 +105,6 @@ class QuizList extends Component {
       );
     }
   }
-}
+
 
 export default QuizList;

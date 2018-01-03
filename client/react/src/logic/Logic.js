@@ -6,7 +6,7 @@ class Logic {
     // this.quizApi = new(require('./api/QuizApi'))('https://desolate-bastion-53155.herokuapp.com/api')
   }
 
-  // user's
+  // user's logic
 
   getUser() {
     return Xtorage.local.getObject('user')
@@ -17,7 +17,7 @@ class Logic {
   }
 
   logout() {
-    Xtorage.local.setObject('user', undefined)
+    Xtorage.local.removeObject('user')
   }
 
   createUser(username, email, password, avatar, color, rex, name, surname, birthdate, sex, zipcode, studies, occupation, organization) {
@@ -87,7 +87,7 @@ class Logic {
     }) => data)
   }
 
-  // quiz's
+  // quiz's logic
 
   addQuiz(userId, quizId, questions) {} // TODO ?
 
