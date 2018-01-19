@@ -114,7 +114,11 @@ class QuizForm extends Component {
       return { quizPersonal: { ...prevState.quizPersonal, ...newData } };
     });
   };
-
+  
+  goToProfile = () => {
+    this.props.history.push('/quiz-list')
+  }
+  
   render() {
     if (!this.state.quizFormFinished) {
       return (
@@ -180,6 +184,7 @@ class QuizForm extends Component {
 
               <button
                 className="btn btn-primary btn-lg text-center center-block"
+                onClick={this.goToProfile}
               >
                 <h2>Go to your profile page!</h2>
               </button>

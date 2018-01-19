@@ -110,6 +110,10 @@ class Quiz extends Component {
       .catch(console.error);
   };
 
+  goToProfile = () => {
+    this.props.history.push('/quiz-list')
+  }
+
   render() {
     if (!this.state.submitResults) {
       // console.log("show question", this.state.i)
@@ -190,6 +194,7 @@ class Quiz extends Component {
 
               <button
                 className="btn btn-primary btn-lg text-center center-block"
+                onClick={this.goToProfile}                
               >
                 <h2>Go to your profile page!</h2>
               </button>

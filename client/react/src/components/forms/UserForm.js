@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 import UserFields from "./fields/UserFields"
 import InputForm from "./inputForm/InputFormText"
@@ -123,8 +124,6 @@ class UserForm extends Component {
         </div>
       )
     } else {
-
-
       return (
         <div className="container results">
           <div className="question-block">
