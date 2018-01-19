@@ -11,7 +11,8 @@
 
 # [Quezaurus](http://fast-refuge-98306.herokuapp.com/#/)
 
-## Screenshoots
+<!-- ## Screenshoots
+
 
 ![Screenshot](#.png)
 
@@ -22,7 +23,7 @@
 ![realtime](#.png)
 
 ### Data Visualitzation
-![dataviz](#.png)
+![dataviz](#.png) -->
 
 ---
 ## Description
